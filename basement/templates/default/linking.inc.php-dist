@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script_name = "$Id: linking.inc.php-dist,v 1.1 2004/10/05 18:26:55 chaot Exp $";
+  $script_name = "$Id: linking.inc.php-dist,v 1.2 2004/10/05 18:42:04 chaot Exp $";
   $Script_desc = "webdesigner kann mit dieser datei das laden der templates beinflussen";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -44,8 +44,8 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= "[ ** $script_name ** ]".$debugging["char"];
-  if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= "name: ".$_SERVER["SCRIPT_NAME"].$debugging["char"];
-  
+  if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= "linking path: ".$linking_path.$debugging["char"];      
+
   // mit diesem script kann ansatt der jeweiligen marke
   // abhaengig vom $environment["ebene"] und/oder $environment["kategorie"] 
   // mit dem wert der variable $mapping["markenbezeichnung"] 
