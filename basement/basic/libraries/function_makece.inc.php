@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_makece.inc.php,v 1.15 2004/10/18 18:42:55 chaot Exp $";
+// "$Id: function_makece.inc.php,v 1.16 2004/10/19 21:41:16 chaot Exp $";
 // "content editor erstellen";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -188,7 +188,7 @@
         $ausgaben["ce_dropdown"] .= "<option value=\"\">#(tagselect)</option>";
         foreach( $cetag as $key => $value ) {
             if ( $value[0] == 1 ) {
-                $ausgaben["ce_button"] .= "<a href=\"#\" onclick=\"INSst('".$key."','".$ce_formname."','".$ce_name."')\" onMouseOver=\"status='".$value[1]."';return true;\" onMouseOut=\"status='';return true;\"><img src=\"".$defaults["cms-tag"]["path"]."cms-tag-".$key.".png\" alt=\"".$value[1]."\" width=\"23\" height=\"22\" border=\"0\" /></a> ";
+                $ausgaben["ce_button"] .= "<a href=\"#\" onclick=\"INSst('".$key."','".$ce_formname."','".$ce_name."')\" onMouseOver=\"status='".$value[1]."';return true;\" onMouseOut=\"status='';return true;\"><img src=\"".$defaults["cms-tag"]["path"]."cms-tag-".$key.".png\" alt=\"".$value[1]."\" title=\"".$value[1]."\" width=\"23\" height=\"22\" border=\"0\" /></a> ";
             }
             $ausgaben["ce_dropdown"] .= "<option value=\"".$key."\">".$value[1]."</option>";
             #ce_anker
