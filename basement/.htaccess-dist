@@ -1,3 +1,21 @@
-RewriteEngine  on
-RewriteBase    /
-RewriteRule    ^default		basic/main.php	[T=application/x-httpd-php]
+# don't forget to load mod_rewrite in apache-config!
+# $Id: .htaccess-dist,v 1.2 2004/09/22 02:52:13 chaot Exp $
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # verzeichnisse und datien die nicht rewrited werden
+  RewriteRule ^basic.* - [L] 			
+  RewriteRule ^conf.* - [L] 			
+  RewriteRule ^css.* - [L] 			
+  RewriteRule ^file.* - [L] 			
+  RewriteRule ^images.* - [L] 			
+  RewriteRule ^modules.* - [L] 			
+  RewriteRule ^templates.* - [L] 			
+  
+  RewriteRule ^robots.txt - [L] 			
+  RewriteRule index.php - [L]
+
+  # der rest wird umgeleitet
+  RewriteRule ^.* basic/main.php [T=application/x-httpd-php]
+</IfModule>
