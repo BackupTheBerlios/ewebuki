@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $script_name = "$Id: kekse.inc.php,v 1.17 2005/03/09 10:04:05 chaot Exp $";
+    $script_name = "$Id: kekse.inc.php,v 1.18 2005/03/13 13:38:55 chaot Exp $";
     $Script_desc = "kekse erstellen";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -99,6 +99,7 @@
     $refid = 0;
     $kekscount = count($kekspath);
     $hitcounter = 0;
+    unset($path);
     foreach ($kekspath as $key => $value) {
         // makierte eintraege aendern
         #if ( strstr($value, "/") ) {
