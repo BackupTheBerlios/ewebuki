@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: site.cfg.php-dist,v 1.4 2004/07/26 13:46:56 chaot Exp $";
+// "$Id: site.cfg.php-dist,v 1.5 2004/07/26 13:47:35 chaot Exp $";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
     eWeBuKi - a easy website building kit
@@ -87,7 +87,7 @@
     $pathvars["filebase"]["doc"] = "document/";
     $pathvars["filebase"]["arc"] = "archiv/";
        
-    // default werte ueberschreiben
+    // defaults werte ueberschreiben
     # man kann z.b. [H2] so umbauen, dass er als ueberschrift mit speziellem font und bild dargestellt wird
     #$defaults["tag"]["h2"] = "<img src=\"".$pathvars["images"]."dot1.gif alt=\"\"".$imgsize."> <span class=\"fkrcontentlead\">";
     #$defaults["tag"]["/h2"] = "</span>";    
