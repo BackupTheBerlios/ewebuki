@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script_name = "$Id: function_rparser.inc.php,v 1.19 2005/02/24 13:11:59 chaot Exp $";
+  $script_name = "$Id: function_rparser.inc.php,v 1.20 2005/02/24 13:17:18 chaot Exp $";
   $Script_desc = "recursiver template parser";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -182,7 +182,7 @@
                             foreach ( (array)$data as $name => $value ) {
                                 $work = str_replace("!{".$name."}",$value,$work);
                             }
-                            $work = ereg_replace("!\{[0-9a-ZA-Z]+\}","&nbsp;",$work);
+                            $work = ereg_replace("!\{[0-9a-zA-Z]+\}","&nbsp;",$work);
                             $block .= $work;
                         }
                         $line = $block.trim($line)."\n";
