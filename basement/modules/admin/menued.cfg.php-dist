@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: menued.cfg.php-dist,v 1.4 2004/01/19 14:30:16 chaot Exp $";
+// "$Id: menued.cfg.php-dist,v 1.5 2004/07/26 12:28:39 chaot Exp $";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
     eWeBuKi - a easy website building kit
@@ -51,10 +51,6 @@
     $cfg["db"]["change"] = 0;
     $cfg["fqdn0"] = "www";
     $cfg["right"] = "cms_admin";
-
-    // Form Settings
-    $form_defaults["class"]["textfield"] = " class=\"class\"";
-    $form_defaults["class"]["textbox"] = " class=\"class\"";
 
     $environment["basis"] = $pathvars["virtual"]."/admin/menued";
     $environment["name"] = "menued";
