@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: menued-functions.inc.php,v 1.2 2004/11/10 09:04:44 chaot Exp $";
+// "$Id: menued-functions.inc.php,v 1.3 2005/03/12 21:44:48 chaot Exp $";
 // "funktion loader";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -288,6 +288,19 @@
             }
         }
     }
+
+    // funktion um zu pruefen, ob das feld extend in der lang tabelle existiert
+    #if ( in_array("checkext", $cfg["function"][$environment["kategorie"]]) ) {
+
+        function checkext() {
+            global $db, $cfg;
+
+            // extend - db test
+            $sql = "select extend from ".$cfg["db"]["lang"]["entries"] ;
+            $result = $db -> query($sql);
+            return $result;
+        }
+    #}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ?>
