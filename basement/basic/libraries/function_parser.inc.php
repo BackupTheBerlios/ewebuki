@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $script_name = "$Id: function_parser.inc.php,v 1.4 2004/11/03 17:04:32 chaot Exp $";
+    $script_name = "$Id: function_parser.inc.php,v 1.5 2004/11/08 13:42:59 chaot Exp $";
     $Script_desc = "parser for sub templates";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -145,8 +145,11 @@
                     }
 
                     // image language korrektur
-                    if ( strstr($parse_mod,"/".$specialvars["default_language"]."_") && $environment["language"] != $specialvars["default_language"] && $environment["language"] != "" ) {
-                        $parse_mod=str_replace("/ger_","/".$environment["language"]."_",$line);
+                    if ( strstr($parse_mod,"_".$specialvars["default_language"].".")
+                        && $environment["language"] != $specialvars["default_language"]
+                        && $environment["language"] != "" ) {
+
+                        $parse_mod=str_replace("_".$specialvars["default_language"].".","_".$environment["language"].".",$parse_mod);
                     }
 
                     //////////////////////////////////////////////////////////////////////////////////////////////
