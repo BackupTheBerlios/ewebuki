@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_tagreplace.inc.php,v 1.25 2005/02/22 20:34:18 chaot Exp $";
+// "$Id: function_tagreplace.inc.php,v 1.26 2005/03/13 02:07:46 chaot Exp $";
 // "tagreplace funktion";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -454,10 +454,15 @@
                     case "[/DIV]":
                         $tagwerte = explode("]",$tagwert,2);
                         $divwerte = explode(";",$tagwerte[0]);
-                        if ( $divwerte[0] != "" ) {
-                            $class = " class=\"".$divwerte[0]."\"";
+                        if ( $divwerte[1] == "id" ) {
+                            $art = "id";
+                        } else {
+                            $art = "class";
                         }
-                        $replace = str_replace($opentag.$tagwert.$closetag,"<div".$class.">".$tagwerte[1]."</div>",$replace);
+                        if ( $divwerte[0] != "" ) {
+                            $uattrib = " ".$art."=\"".$divwerte[0]."\"";
+                        }
+                        $replace = str_replace($opentag.$tagwert.$closetag,"<div".$uattrib.">".$tagwerte[1]."</div>",$replace);
                         break;
                     case "[/TAB]":
                         if ( $sign == "]" ) {
