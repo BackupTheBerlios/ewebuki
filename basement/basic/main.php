@@ -1,6 +1,6 @@
 <?php require "libraries/global.inc.php";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: main.php,v 1.3 2003/11/13 12:28:17 chaot Exp $";
+    $main_script_name = "$Id: main.php,v 1.4 2003/11/18 17:28:47 chaot Exp $";
     $main_script_desc = "haupt script";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -185,7 +185,14 @@
     }
 
     // was steht in den post vars
+    if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= $debugging["char"]."form (post):".$debugging["char"];
     foreach($HTTP_POST_VARS as $name => $value) {
+         if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= $name." => ".$value.$debugging["char"];
+    }
+
+    // was steht in den get vars
+    if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= $debugging["char"]."form (get):".$debugging["char"];
+    foreach($HTTP_GET_VARS as $name => $value) {
          if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= $name." => ".$value.$debugging["char"];
     }
 
