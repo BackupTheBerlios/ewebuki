@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script_name = "$Id: menu.inc.php,v 1.7 2005/03/12 21:46:39 chaot Exp $";
+  $script_name = "$Id: menu.inc.php,v 1.8 2005/03/13 02:01:35 chaot Exp $";
   $Script_desc = "menu generieren - 3 stufen ";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -20,7 +20,7 @@
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-//     along with eWeBuKi; If you did not, you may download a copy at:
+    along with eWeBuKi; If you did not, you may download a copy at:
 
     URL:  http://www.gnu.org/licenses/gpl.txt
 
