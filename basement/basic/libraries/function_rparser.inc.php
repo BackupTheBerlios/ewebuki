@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script_name = "$Id: function_rparser.inc.php,v 1.20 2005/02/24 13:17:18 chaot Exp $";
+  $script_name = "$Id: function_rparser.inc.php,v 1.21 2005/03/10 09:19:17 chaot Exp $";
   $Script_desc = "recursiver template parser";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -192,9 +192,10 @@
                     }
                 }
 
-                if ( strstr($line,"!#" ) ) {
+                if ( strstr($line,"!#") && !strstr($line,"<textarea") ) {
                     $line=str_replace("!#pathvars_webroot",$pathvars["webroot"],$line);
                     $line=str_replace("!#pathvars_menuroot",$pathvars["menuroot"],$line);
+                    $line=str_replace("!#pathvars_pretorian",$pathvars["pretorian"],$line);
                     $line=str_replace("!#specialvars_pagetitle",$specialvars["pagetitle"],$line);
                     $line=str_replace("!#date",gerdate(),$line);
                     $line=str_replace("!#environment_kekse",$environment["kekse"],$line);
