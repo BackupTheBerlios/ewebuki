@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script_name = "$Id: function_rparser.inc.php,v 1.12 2004/09/30 17:10:10 chaot Exp $";
+  $script_name = "$Id: function_rparser.inc.php,v 1.13 2004/09/30 17:30:51 chaot Exp $";
   $Script_desc = "recursiver template parser";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -109,7 +109,7 @@
               // dynamic bg
               if ( strstr($line,"background=\"!#specialvars_dynamicbg\"") ) {
                 if ( $specialvars["dynamicbg"] != "" ) {
-                    $line=str_replace("background=\"!#specialvars_dynamicbg\"","background=\"../../images/".$environment["design"]."/\"".$specialvars["dynamicbg"],$line);                    
+                    $line=str_replace("background=\"!#specialvars_dynamicbg\"","background=\"/images/".$environment["design"]."/".$specialvars["dynamicbg"]."\"",$line);                    
                 } else {
                     $line=str_replace("background=\"!#specialvars_dynamicbg\"","",$line);                    
                 }
