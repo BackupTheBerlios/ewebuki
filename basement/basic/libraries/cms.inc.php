@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $script_name = "$Id: cms.inc.php,v 1.5 2004/11/06 00:56:11 chaot Exp $";
+    $script_name = "$Id: cms.inc.php,v 1.6 2004/11/14 21:39:40 chaot Exp $";
     $Script_desc = "eWeBuKi cms editor";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -196,8 +196,8 @@
                 if ( $HTTP_POST_VARS["content"] == "" ) {
                     $sql = "DELETE FROM ". SITETEXT ."
                                   WHERE  label ='".$environment["parameter"][3]."'
-                                    AND  tname ='".$environment["parameter"][2]."'";
-                                    #tid='".$environment["parameter"][4]."'";
+                                    AND  tname ='".$environment["parameter"][2]."'
+                                    AND  lang = '".$environment["language"]."'";
                 } else {
                     $sql = "UPDATE ". SITETEXT ." set
                                     content = '".$content."',
@@ -206,8 +206,8 @@
                                     ebene = '".$HTTP_SESSION_VARS["ebene"]."',
                                     kategorie = '".$HTTP_SESSION_VARS["kategorie"]."'
                              WHERE  label = '".$environment["parameter"][3]."'
-                               AND  tname = '".$environment["parameter"][2]."'";
-                                    #tid='".$environment["parameter"][4]."'";
+                               AND  tname = '".$environment["parameter"][2]."'
+                               AND  lang = '".$environment["language"]."'";
                 }
             } else {
                 $sql = "INSERT INTO ". SITETEXT ."
