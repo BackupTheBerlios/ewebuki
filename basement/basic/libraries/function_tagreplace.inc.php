@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_tagreplace.inc.php,v 1.15 2004/10/11 16:18:22 chaot Exp $";
+// "$Id: function_tagreplace.inc.php,v 1.16 2004/10/12 16:37:08 chaot Exp $";
 // "tagreplace funktion";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -418,6 +418,14 @@
                         $ausgabewert = str_replace(chr(13).chr(10),"",parser("imgb", ""));
 
                         $replace = str_replace($opentag.$tagwert.$endtag,$ausgabewert,$replace);
+                        break;
+                    case "[DIV=":
+                        $tagwerte = explode("]",$tagwert,2);
+                        $divwerte = explode(";",$tagwerte[0]);
+                        if ( $divwerte[0] != "" ) {
+                            $class = " class=\"".$divwerte[1]."\"";
+                        }
+                        $replace = str_replace($opentag.$tagwert.$endtag,"<div".$class.">".$tagwerte[1]."</div>",$replace);
                         break;
                     case "[TAB]":
                         $replace = str_replace($opentag.$tagwert.$endtag,"<table cellspacing=\"0\" cellpadding=\"1\">".$tagwert."</table>",$replace);
