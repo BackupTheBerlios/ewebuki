@@ -1,6 +1,6 @@
 <?php $t_start = array_sum(explode(' ', microtime())); require "libraries/global.inc.php";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: main.php,v 1.8 2004/09/23 00:30:02 chaot Exp $";
+    $main_script_name = "$Id: main.php,v 1.9 2004/09/23 12:13:41 chaot Exp $";
     $main_script_desc = "haupt script";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -65,6 +65,7 @@
     $pathvars["level_depth"] = count($pathvars["level"])-1;
     if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= "pathvars level depth: ".$pathvars["level_depth"].$debugging["char"];
 
+    // design detection
     if ( $pathvars["level"][1] != "" && is_dir($pathvars["fileroot"]."templates/".$pathvars["level"][1]) ) {
       $environment["design"] = $pathvars["level"][1];
       $pathvars["virtual"] = "/".$environment["design"];       
@@ -74,8 +75,8 @@
       $environment["design"] = $specialvars["default_design"];
       $designsw = " (default)";
     }
-    if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= "design".$designsw.": ".$environment["design"].$debugging["char"];
-    
+    if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= "design".$designsw.": ".$environment["design"].$debugging["char"]; 
+        
     // language detection
     for ( $i=1; $i<=2 ; $i++ ) {
       if ( in_array($pathvars["level"][$i],$specialvars["available_languages"]) ) {
@@ -265,6 +266,9 @@
     // steuerung der funktionen
     require $pathvars["config"]."addon.cfg.php";
 
+    // überschreiben von default werten
+    require $pathvars["config"]."overwrite.cfg.php";    
+    
     // aenderungen durch webdesigner
     require $pathvars["templates"]."linking.inc.php";
     
