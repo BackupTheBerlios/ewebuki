@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: overwrite.cfg.php-dist,v 1.7 2004/10/06 23:44:22 chaot Exp $";
+// "$Id: overwrite.cfg.php-dist,v 1.8 2004/10/21 00:17:35 chaot Exp $";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
     eWeBuKi - a easy website building kit
@@ -56,7 +56,7 @@
 
   // bild fuer den bearbeiten link
   #$defaults["cms-tag"]["signal"] = "<img src=\"".$pathvars["images"]."/cms-tag-";
-  #$defaults["cms-tag"]["/signal"] = ".png\" width=\"4\" height=\"4\" border=\"0\" alt=\"Bearbeiten\"></a>";
+  #$defaults["cms-tag"]["/signal"] = ".png\" width=\"4\" height=\"4\" border=\"0\" alt=\"Bearbeiten\">";
 
   // eigene icons verwenden
   #$defaults["icon"]["pdf"] = "<img src=\"".$pathvars["images"]."icon_pdf.png\">";
