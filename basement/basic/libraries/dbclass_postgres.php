@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: dbclass_postgres.php,v 1.2 2004/09/23 14:06:02 chaot Exp $";
+    $main_script_name = "$Id: dbclass_postgres.php,v 1.3 2004/09/24 10:07:00 chaot Exp $";
     $main_script_desc = "abstraction object for postgres";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -62,28 +62,31 @@
         // returns true on success!
         // used via $db->connect();
         function connect() {
-            $host = $this->HOST;
+            $user = $this->USER;
+            $pass = $this->PASS;           
+            $host = $this->HOST;            
             if ( $host != "" ) {
                 $hoststring = "host=".$host." ";
             }
             $db   = $this->DB;
-            $user = $this->USER;
-            $pass = $this->PASS;
-            $conn = pg_connect($hoststring."dbname=".$db." user=".$user." password=".$pass);
-
+            $conn = @pg_connect($hoststring."dbname=".$db." user=".$user." password=".$pass);
+            $return = false;
+            
             // error-handling first for connection, second for
             // db-finding
 
             if(!$conn) {
-                $this->error("Connection to $db on $host failed.");
+                $return = $this->error("Connection to $db on $host failed.");
+            } else {
+                $return = $db;
             }
 
             #if($this->ROOT_RUN != "yes") {
-            #    $this->selectDb($this->DB,false);
+            #   $return = $this->selectDb($this->DB,false);
             #}
 
             $this->CONN = $conn;
-            return true;
+            return $return;
         }
 
         // connection to our db - change defines in config.php
@@ -91,20 +94,23 @@
         // returns true on success
         // used vi $db->pconnect();
         function pconnect() {
+            $user = $this->USER;
+            $pass = $this->PASS;           
             $host = $this->HOST;
             if ( $host != "" ) {
                 $hoststring = "host=".$host." ";
             }
             $db   = $this->DB;
-            $user = $this->USER;
-            $pass = $this->PASS;
-            $conn = pg_pcconnect($hoststring."dbname=".$db." user=".$user." password=".$pass);
-
+            $conn = @pg_pcconnect($hoststring."dbname=".$db." user=".$user." password=".$pass);
+            $return = false;
+            
             // error-handling first for connection, second for
             // db-finding
 
             if(!$conn) {
-                $this->error("Connection to $db on $host failed.");
+                $return = $this->error("Connection to $db on $host failed.");
+            } else {
+                $return = $db;
             }
 
             #if($this->ROOT_RUN != "yes") {
@@ -112,7 +118,7 @@
             #}
 
             $this->CONN = $conn;
-            return true;
+            return $return;
         }
 
         // this handles all errors
@@ -136,15 +142,16 @@
 
         function selectDb($database,$err) {
             // befehl nicht vorhanden, deswegen neuer connect :)
-            #$success = mysql_select_db($database);
+            #$return = mysql_select_db($database);
             $this->DB = $database;
-            $success = $this->connect();
-            if($success) {
+            $return = $this->connect();
+            if( $return ) {
                 $this->DB = $database;
-                return $success;
+                return $return;
             } else {
                 if($err) {
-                  $this->error("Can't select database $database");
+                  $return = $this->error("Can't select database $database");
+                  return $return;
                 }
             }
         }
