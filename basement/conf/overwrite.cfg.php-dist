@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: overwrite.cfg.php-dist,v 1.8 2004/10/21 00:17:35 chaot Exp $";
+// "$Id: overwrite.cfg.php-dist,v 1.9 2004/11/08 18:42:28 chaot Exp $";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
     eWeBuKi - a easy website building kit
@@ -57,6 +57,11 @@
   // bild fuer den bearbeiten link
   #$defaults["cms-tag"]["signal"] = "<img src=\"".$pathvars["images"]."/cms-tag-";
   #$defaults["cms-tag"]["/signal"] = ".png\" width=\"4\" height=\"4\" border=\"0\" alt=\"Bearbeiten\">";
+
+  // bilder fuer vor und zurueck
+  #$defaults["select"]["none"] = "<img src=\"".$pathvars["images"]."pos.png\" height=\"9\" width=\"15\" border=\"0\" align=\"bottom\" alt=\"\" />" : NOP;
+  #$defaults["select"]["prev"] = "<img src=\"".$pathvars["images"]."sel_left.png\" height=\"9\" width=\"15\" border=\"0\" align=\"bottom\" alt=\"#(prev)\" title=\"#(prev)\" />" : NOP;
+  #$defaults["select"]["next"] = "<img src=\"".$pathvars["images"]."sel_right.png\" height=\"9\" width=\"15\" border=\"0\" align=\"bottom\" alt=\"#(next)\" title=\"#(next)\" />" : NOP;
 
   // eigene icons verwenden
   #$defaults["icon"]["pdf"] = "<img src=\"".$pathvars["images"]."icon_pdf.png\">";
