@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: dbclass_mysql.php,v 1.4 2004/09/24 10:04:16 chaot Exp $";
+    $main_script_name = "$Id: dbclass_mysql.php,v 1.5 2005/02/24 09:03:00 chaot Exp $";
     $main_script_desc = "abstraction object for mysql";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -69,7 +69,7 @@
             $db   = $this->DB;
             $conn = mysql_connect($host,$user,$pass);
             $return = false;
-            
+
             // error-handling first for connection, second for
             // db-finding
 
@@ -102,8 +102,8 @@
             // db-finding
 
             if(!$conn) {
-                if ( $host == "" ) $host = "localhost";            
-                $return = $this->error("Connection to $db on $host failed.");                
+                if ( $host == "" ) $host = "localhost";
+                $return = $this->error("Connection to $db on $host failed.");
             }
 
             if($this->ROOT_RUN != "yes") {
@@ -138,11 +138,11 @@
         }
 
         function selectDb($database,$err) {
-            $return = @mysql_select_db($database);           
+            $return = @mysql_select_db($database);
             if ( $return ) {
                 $this->DB = $database;
                 return $database;
-            } else {               
+            } else {
                 if ( $err ) {
                     $return = $this->error("Can't select database $database");
                     return $return;
@@ -256,6 +256,10 @@
                       break;
             }
             return $array;
+        }
+
+        function data_seek($result,$offset) {
+            mysql_data_seek($result,$offset);
         }
 
         function free_result($result) {
