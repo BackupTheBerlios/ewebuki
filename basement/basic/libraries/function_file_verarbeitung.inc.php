@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_file_verarbeitung.inc.php,v 1.2 2003/11/13 12:17:04 chaot Exp $";
+// "$Id: function_file_verarbeitung.inc.php,v 1.3 2004/03/26 13:08:32 chaot Exp $";
 // "file_verarbeitung";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -71,11 +71,10 @@
             if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= "file mime type: ".$_FILES[$name]["type"].$debugging["char"];
             if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= "file size: ".$_FILES[$name]["size"].$debugging["char"];
 
-            if ( substr($_FILES[$name]["name"],-4,1) == "." ) {
-                $dateiendung = substr($_FILES[$name]["name"],-3,3);
-            } else {
-                $dateiendung = substr($_FILES[$name]["name"],-4,4);
-            }
+            // dateiendung erkennen
+            $path_parts = pathinfo($_FILES[$name]["name"]);
+            $dateiendung = strtolower($path_parts["extension"]);
+
             if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= "file extension: ".$dateiendung.$debugging["char"];
 
             // php minor version auf oder >= 2 pruefen
