@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_gerdate.inc.php,v 1.3 2005/03/18 13:30:51 chaot Exp $";
+// "$Id: function_gerdate.inc.php,v 1.4 2005/04/03 08:15:35 chaot Exp $";
 // "gerdate";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -46,6 +46,8 @@
 
     function gerdate($art="", $value="") {
 
+        if ( $value == "" ) $aktuell = True;
+
         // gds -> german day short
         // gdl -> german day log
         // gms -> german month short
@@ -62,7 +64,7 @@
                 case "6": $tag="Sa, "; break;
             }
         } else {
-            if ( $value == "" ) $value=date("w");
+            if ( $aktuell == True ) $value=date("w");
             switch ($value) {
                 case "0": $tag="Sonntag, "; break;
                 case "1": $tag="Montag, "; break;
@@ -105,7 +107,7 @@
                 case 12: $monat="Dezember"; break;
             }
         } else {
-            if ( $value == "" ) $value=date("n");
+            if ( $aktuell == True ) $value=date("n");
             switch ($value) {
                 case 1: $monat="01."; break;
                 case 2: $monat="02."; break;
