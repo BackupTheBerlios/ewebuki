@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_tagreplace.inc.php,v 1.23 2004/12/02 15:27:02 chaot Exp $";
+// "$Id: function_tagreplace.inc.php,v 1.24 2004/12/02 15:49:55 chaot Exp $";
 // "tagreplace funktion";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -145,9 +145,9 @@
                         $brwerte = explode(";",$tagwerte[0]);
                         if ( $brwerte[0] == "a" ) {
                             $clear = "all";
-                        } elseif ( $brwerte[1] == "l" ) {
+                        } elseif ( $brwerte[0] == "l" ) {
                             $clear = "left";
-                        } elseif ( $brwerte[1] == "r" ) {
+                        } elseif ( $brwerte[0] == "r" ) {
                             $clear = "right";
                         } else {
                             $clear = "";
