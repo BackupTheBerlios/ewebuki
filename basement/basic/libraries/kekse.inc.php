@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $script_name = "$Id: kekse.inc.php,v 1.8 2004/09/30 16:31:54 chaot Exp $";
+    $script_name = "$Id: kekse.inc.php,v 1.9 2004/09/30 17:10:10 chaot Exp $";
     $Script_desc = "kekse erstellen";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -137,12 +137,12 @@
 
             // variables css file - erweiterung laut menueintrag setzen
             if ( $keksarray["dynamiccss"] != "" ) {
-                $specialvars["dynamic_css"] = $keksarray["dynamiccss"];
+                $specialvars["dynamiccss"] = $keksarray["dynamiccss"];
             }
             
             // variables bg bild - erweiterung laut menueintrag setzen
             if ( $keksarray["dynamicbg"] != "" ) {
-                $specialvars["dynamic_bg"] = $keksarray["dynamicbg"];
+                $specialvars["dynamicbg"] = $keksarray["dynamicbg"];
             }          
             
             // navbar erstellen
