@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script_name = "$Id: function_rparser.inc.php,v 1.6 2004/01/20 10:30:57 chaot Exp $";
+  $script_name = "$Id: function_rparser.inc.php,v 1.7 2004/01/20 10:44:47 chaot Exp $";
   $Script_desc = "recursiver template parser";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -124,7 +124,7 @@
                 if ( strstr($line,"!#lnk_" ) ) {
                     if ( is_array($lnk) ) {
                         foreach($lnk as $name => $value) {
-                            if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= "parser info: \$lnk[$name]".$debugging["char"];
+                            #if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= "parser info: \$lnk[$name]".$debugging["char"];
                             $line=str_replace("!#lnk_$name",$value,$line);
                         }
                     }
