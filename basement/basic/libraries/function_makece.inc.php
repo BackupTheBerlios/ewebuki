@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_makece.inc.php,v 1.11 2004/10/06 23:27:35 chaot Exp $";
+// "$Id: function_makece.inc.php,v 1.12 2004/10/06 23:45:22 chaot Exp $";
 // "content editor erstellen";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -44,7 +44,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     function makece($ce_formname, $ce_name, $ce_inhalt) {
-        global $db, $pathvars, $ausgaben, $extension, $specialvars;
+        global $db, $pathvars, $ausgaben, $extension, $specialvars, $defaults;
         $ausgaben["ce_name"] = $ce_name;
 
         $specialvars["editlock"] = -1;
