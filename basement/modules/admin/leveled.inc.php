@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $script_name = "$Id: leveled.inc.php,v 1.4 2004/11/09 01:18:13 chaot Exp $";
+    $script_name = "$Id: leveled.inc.php,v 1.5 2005/03/12 21:57:34 chaot Exp $";
     $Script_desc = "Level Management Applikation";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -235,7 +235,7 @@
                                          VALUES ('".$environment["parameter"][2]."',
                                                  '".$value."')";
                             if ( $debugging["sql_enable"] ) $debugging["ausgabe"] .= "sql: ".$sql.$debugging["char"];
-                            $db -> query($sql);
+                            $result = $db -> query($sql);
                             if ( !$result ) $ausgaben["form_error"] .= $db -> error("#(error_result)<br />");
                         }
                         if ( $HTTP_POST_VARS["add"] ) {
@@ -249,7 +249,7 @@
                         foreach ($HTTP_POST_VARS["actual"] as $name => $value ) {
                             $sql = "DELETE FROM auth_right where rid='".$value."'";
                             if ( $debugging["sql_enable"] ) $debugging["ausgabe"] .= "sql: ".$sql.$debugging["char"];
-                            $db -> query($sql);
+                            $result = $db -> query($sql);
                             if ( !$result ) $ausgaben["form_error"] .= $db -> error("#(error_result)<br />");
                         }
                         if ( $HTTP_POST_VARS["del"] ) {
