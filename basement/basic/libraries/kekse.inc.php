@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $script_name = "$Id: kekse.inc.php,v 1.1 2003/10/06 19:12:21 chaot Exp $";
+    $script_name = "$Id: kekse.inc.php,v 1.2 2003/10/19 15:36:23 chaot Exp $";
     $Script_desc = "kekse erstellen";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -51,7 +51,7 @@
         $specialvars["rootname"] = $db->getDb();
     }
 
-    $environment["kekse"] = "<a href=\"".$pathvars["virtual"]."/\">".$specialvars["rootname"]."</a>";
+    $environment["kekse"] = "<a href=\"".$pathvars["virtual"]."/index.html\">".$specialvars["rootname"]."</a>";
 
     // special eintraege markieren
     #$special = array( "list", "details", "modify", "start" );
