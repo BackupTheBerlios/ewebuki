@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: dbclass_mysql.php,v 1.5 2005/02/24 09:03:00 chaot Exp $";
+    $main_script_name = "$Id: dbclass_mysql.php,v 1.6 2005/02/24 09:11:13 chaot Exp $";
     $main_script_desc = "abstraction object for mysql";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -259,7 +259,8 @@
         }
 
         function data_seek($result,$offset) {
-            mysql_data_seek($result,$offset);
+            $success = mysql_data_seek($result,$offset);
+            return $success;
         }
 
         function free_result($result) {
