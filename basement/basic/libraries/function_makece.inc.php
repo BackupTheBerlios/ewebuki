@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_makece.inc.php,v 1.17 2004/10/21 01:53:11 chaot Exp $";
+// "$Id: function_makece.inc.php,v 1.18 2004/11/03 11:15:01 chaot Exp $";
 // "content editor erstellen";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -188,7 +188,7 @@
             if ( $value[0] == 1 ) {
                 $ausgaben["ce_button"] .= "<a href=\"#\" onclick=\"INSst('".$key."','".$ce_formname."','".$ce_name."')\" onMouseOver=\"status='".$value[1]."';return true;\" onMouseOut=\"status='';return true;\"><img src=\"".$defaults["cms-tag"]["path"]."cms-tag-".$key.".png\" alt=\"".$value[1]."\" title=\"".$value[1]."\" width=\"23\" height=\"22\" border=\"0\" /></a>\n ";
             }
-            $ausgaben["ce_dropdown"] .= "<option value=\"".$key."\">".$value[1]."</option>";
+            $ausgaben["ce_dropdown"] .= "<option value=\"".$key."\">".$value[1]."</option>\n";
             #ce_anker
         }
         $ausgaben["ce_dropdown"] .= "</select>";

@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_content.inc.php,v 1.8 2004/10/21 02:12:30 chaot Exp $";
+// "$Id: function_content.inc.php,v 1.9 2004/11/03 11:16:31 chaot Exp $";
 // "content sprachabhaengig holen";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -142,7 +142,7 @@
                 }
 
                 // wenn es kein value, alt, title und status in der zeile gibt
-                $vorher = substr($line,$labelbeg-10,10);;
+                $vorher = substr($line,$labelbeg-20,20);
                 if ( !strstr($vorher,"value=\"")
                   && !strstr($vorher,"alt=\"")
                   && !strstr($vorher,"title=\"")
