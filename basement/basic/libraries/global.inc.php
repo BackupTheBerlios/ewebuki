@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: global.inc.php,v 1.1 2003/10/06 19:12:21 chaot Exp $";
+    $main_script_name = "$Id: global.inc.php,v 1.2 2003/11/13 12:25:12 chaot Exp $";
     $main_script_desc = "main include file";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -85,6 +85,7 @@
     require $pathvars["libraries"]."function_file_verarbeitung.inc.php"; // upload verarbeitung
     require $pathvars["libraries"]."function_makece.inc.php"; // content editor erstellen
     require $pathvars["libraries"]."function_parser.inc.php"; // parser funktion
+    require $pathvars["libraries"]."function_right_check.inc.php"; // rechte in bereichen pruefen
     require $pathvars["libraries"]."function_rparser.inc.php"; // parser funktion recursiv
 
     if ( $specialvars["postgres"] == "-1" ) {

@@ -1,6 +1,6 @@
 <?php require "libraries/global.inc.php";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: main.php,v 1.2 2003/10/11 12:01:37 chaot Exp $";
+    $main_script_name = "$Id: main.php,v 1.3 2003/11/13 12:28:17 chaot Exp $";
     $main_script_desc = "haupt script";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -214,6 +214,11 @@
             session_register("kategorie");
             $HTTP_SESSION_VARS["kategorie"] = $environment["kategorie"];
         }
+    }
+
+    // view funktion
+    if ( $environment["katid"] == "view" ) {
+        include $pathvars["libraries"]."view.inc.php";
     }
 
     // steuerung der funktionen
