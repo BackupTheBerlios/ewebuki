@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_form_elements.inc.php,v 1.3 2003/11/13 12:18:40 chaot Exp $";
+// "$Id: function_form_elements.inc.php,v 1.4 2004/03/26 16:32:35 chaot Exp $";
 // "form_elements";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -194,7 +194,11 @@
             } elseif ( strstr($fields["Type"], "date")) {
                 $preg = "^([0-9]{4})\-([0-9]{2})\-([0-9]{2})";
                 if ( $form_values[$fields["Field"]] == "" ) {
-                    $form_values[$fields["Field"]] = $fields["Default"];
+                    if ( $fields["Default"] != "" ) {
+                        $form_values[$fields["Field"]] = $fields["Default"];
+                    } else {
+                        $form_values[$fields["Field"]] = date("d.m.Y");
+                    }
                 } elseif (preg_match_all("/$preg/",$form_values[$fields["Field"]],$regs)) {
                 #} elseif ( substr($form_values[$fields["Field"]],2,1) != "." ) {
                     $convert = $form_values[$fields["Field"]];
