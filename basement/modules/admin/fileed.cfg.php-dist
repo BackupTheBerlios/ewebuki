@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: fileed.cfg.php-dist,v 1.6 2003/11/13 21:51:47 chaot Exp $";
+// "$Id: fileed.cfg.php-dist,v 1.5 2003/11/13 21:49:09 chaot Exp $";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
     eWeBuKi - a easy website building kit
@@ -52,8 +52,8 @@
             "key"      => "fid",
             "order"    => "fid",
             "sort"     => "DESC",
-            "rows"     => "10",   # pro seite
-            "line"     => "5",    # pro zeile  (rows / line) gib zeilen
+            "rows"     => "15",
+            "line"     => "5",
             "language" => "",
         ),
         "filetyp"   => array("jpg", "png", "pdf", "zip"),
