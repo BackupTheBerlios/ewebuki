@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script["name"] = "$Id: passed.inc.php,v 1.8 2004/11/09 15:54:41 chaot Exp $";
+  $script["name"] = "$Id: passed.inc.php,v 1.9 2004/11/09 19:38:25 chaot Exp $";
   $Script["desc"] = "user password change";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -137,6 +137,10 @@
                     $b=mt_rand(1,128);
                     $mysalt = chr($a).chr($b);
                     $checked_password = crypt($checked_password, $mysalt);
+
+                    // da ich das passwort erstellt habe, klappt magic_quotes_gpc nicht
+                    $checked_password = addslashes($checked_password);
+
                 } else {
                     $ausgaben["form_error"] .= "#(error_chkpass)";
                 }
