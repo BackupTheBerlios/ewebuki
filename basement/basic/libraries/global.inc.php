@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: global.inc.php,v 1.3 2004/07/22 13:59:22 chaot Exp $";
+    $main_script_name = "$Id: global.inc.php,v 1.4 2004/07/22 19:11:19 chaot Exp $";
     $main_script_desc = "main include file";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -47,9 +47,9 @@
     $pathvars["webroot"]   = "http://".$_SERVER["HTTP_HOST"];
     $pathvars["webimages"] = "/images/main"."/";                        # gilt nur fuer select seite
     $pathvars["webcss"]    = "/css"."/";                                # gilt nur fuer select seite
-
-    $pathvars["fileroot"]   = $_SERVER["DOCUMENT_ROOT"];#."/";
-
+    
+    $pathvars["fileroot"] = rtrim($_SERVER["DOCUMENT_ROOT"],"/")."/";
+        
     $pathvars["basicroot"]  = $pathvars["fileroot"]."basic/";
     $pathvars["addonroot"]  = $pathvars["fileroot"]."modules/";
 
