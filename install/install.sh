@@ -3,9 +3,9 @@
 # eWeBuKi install script
 #
 # (c) Stefan Krister
-#     stefan.krister@creative.chaos.de
+#     stefan.krister (at) creative.chaos.de
 #
-# $Id: install.sh,v 1.2 2004/09/20 20:28:06 chaot Exp $
+# $Id: install.sh,v 1.3 2004/09/22 16:21:17 bastard Exp $
 #
 
 function ask()
