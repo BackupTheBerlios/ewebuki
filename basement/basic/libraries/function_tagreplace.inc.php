@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_tagreplace.inc.php,v 1.26 2005/03/13 02:07:46 chaot Exp $";
+// "$Id: function_tagreplace.inc.php,v 1.27 2005/03/15 18:29:32 chaot Exp $";
 // "tagreplace funktion";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -697,9 +697,14 @@
                         $replace = str_replace($opentag.$tagwert.$closetag,$ausgaben["M3"],$replace);
                         break;
                     default:
+                        // unbekannte tags verstecken
+                        $replace = str_replace($closetag,"[##".substr($closetag,1),$replace);
                }
            }
         }
+        // unbekannte tags wiederherstellen
+        $replace = str_replace("[##/","[/",$replace);
+
         return $replace;
     }
 
