@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_tagreplace.inc.php,v 1.7 2004/07/22 15:37:58 chaot Exp $";
+// "$Id: function_tagreplace.inc.php,v 1.8 2004/07/23 12:39:07 chaot Exp $";
 // "tagreplace funktion";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -433,14 +433,14 @@
                         } else {
                             $cellpadding = " cellpadding=\"1\"";
                         }
-                        $replace = str_replace($opentag.$tagwert.$endtag,"<table".$cellspacing.$cellpadding.$width.$align.$border.">".$tagwerte[1]."</table>\n",$replace);
+                        $replace = str_replace($opentag.$tagwert.$endtag,"<table".$cellspacing.$cellpadding.$width.$align.$border.">".$tagwerte[1]."</table>",$replace);
                         $replace = tagreplace($replace);
                         break;
                     case "[ROW]":
-                        $replace = str_replace($opentag.$tagwert.$endtag,"<tr>".$tagwert_nocrlf."</tr>\n",$replace);
+                        $replace = str_replace($opentag.$tagwert.$endtag,"<tr>".$tagwert_nocrlf."</tr>",$replace);
                         break;
                     case "[COL]":
-                        $replace = str_replace($opentag.$tagwert.$endtag,"<td valign=\"top\">".$tagwert_nocrlf."</td>\n",$replace);
+                        $replace = str_replace($opentag.$tagwert.$endtag,"<td valign=\"top\">".$tagwert_nocrlf."</td>",$replace);
                         break;
                     case "[COL=":
                         $tagwerte = explode("]",$tagwert_nocrlf,2);
