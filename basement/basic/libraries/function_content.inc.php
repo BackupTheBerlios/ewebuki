@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_content.inc.php,v 1.5 2004/10/06 22:21:44 chaot Exp $";
+// "$Id: function_content.inc.php,v 1.6 2004/10/14 21:39:22 chaot Exp $";
 // "content sprachabhaengig holen";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -138,7 +138,7 @@
 
                 if ( $defaults["cms-tag"]["signal"] == "" ) {
                     $defaults["cms-tag"]["signal"] = "<img src=\"/images/default/cms-tag-";
-                    $defaults["cms-tag"]["/signal"] = ".png\" width=\"4\" height=\"4\" border=\"0\" alt=\"Bearbeiten\"></a>";
+                    $defaults["cms-tag"]["/signal"] = ".png\" width=\"4\" height=\"4\" border=\"0\" alt=\"Bearbeiten\" /></a>";
                 }
 
                 // wenn es kein button ist

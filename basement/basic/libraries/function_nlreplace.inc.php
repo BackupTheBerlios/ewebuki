@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_nlreplace.inc.php,v 1.1 2003/10/06 19:12:20 chaot Exp $";
+// "$Id: function_nlreplace.inc.php,v 1.2 2004/10/14 21:39:22 chaot Exp $";
 // "nlreplace";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -46,8 +46,8 @@
 
     function nlreplace($replace) {
         # $replace = nl2br($replace);
-        $replace = str_replace(chr(13).chr(10),"<br>",$replace);
-        #$replace = str_replace(chr(10).chr(13),"<br>\n",$replace);
+        $replace = str_replace(chr(13).chr(10),"<br />",$replace);
+        #$replace = str_replace(chr(10).chr(13),"<br />\n",$replace);
         #$replace = wordwrap( $replace, 79, "\n", 1);
         return $replace;
     }

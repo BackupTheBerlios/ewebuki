@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $script_name = "$Id: auth.inc.php,v 1.7 2004/09/22 02:12:32 chaot Exp $";
+    $script_name = "$Id: auth.inc.php,v 1.8 2004/10/14 21:39:22 chaot Exp $";
     $Script_desc = "authentifikation modul (mysql encrypt/ php crypt)";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -146,12 +146,12 @@
             $array = explode(";", $werte[1]);
             foreach( $array as $value) {
                 if ( $rechte[$value] == -1 || $value == "" ) {
-                    $ausgaben["logout_rechte"] .= "<a href=\"".$pathvars["virtual"]."/admin/".$funktion."/".$werte[0].".html\">#(".$funktion.")</a><br>";
+                    $ausgaben["logout_rechte"] .= "<a href=\"".$pathvars["virtual"]."/admin/".$funktion."/".$werte[0].".html\">#(".$funktion.")</a><br />";
                     break;
                 }
             }
         }
-        if ( $ausgaben["logout_rechte"] != "" ) $ausgaben["logout_rechte"] = "<br>#(desc)<br><br>".$ausgaben["logout_rechte"];
+        if ( $ausgaben["logout_rechte"] != "" ) $ausgaben["logout_rechte"] = "<br />#(desc)<br /><br />".$ausgaben["logout_rechte"];
 
         $ausgaben["auth"] = parser( "auth.logout", "");
     }

@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_form_errors.inc.php,v 1.1 2003/10/06 19:12:20 chaot Exp $";
+// "$Id: function_form_errors.inc.php,v 1.2 2004/10/14 21:39:22 chaot Exp $";
 // "form_errors";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -57,9 +57,9 @@
                     if ( $form_values[$name] == "" ) {
                         // gibt es eine fehlermeldung in der db ?
                         if ( $value["ferror"] == "" ) {
-                            $ausgaben["form_error"] .= "Field: ".$value["flabel"]." required!<br>";
+                            $ausgaben["form_error"] .= "Field: ".$value["flabel"]." required!<br />";
                         } else {
-                            $ausgaben["form_error"] .= $value["ferror"]."<br>";
+                            $ausgaben["form_error"] .= $value["ferror"]."<br />";
                         }
                     }
                 }
@@ -71,9 +71,9 @@
                         $preg = substr($value["fcheck"],5);
                         if (!preg_match_all("/$preg/",$form_values[$name],$regs) && !$form_values[$name] == "") {
                             if ( $value["fchkerror"] == "" ) {
-                                $ausgaben["form_error"] .= "Field: ".$value["flabel"]." check failed!<br>";
+                                $ausgaben["form_error"] .= "Field: ".$value["flabel"]." check failed!<br />";
                             } else {
-                                $ausgaben["form_error"] .= $value["fchkerror"]."<br>";
+                                $ausgaben["form_error"] .= $value["fchkerror"]."<br />";
                             }
                         }
                     }

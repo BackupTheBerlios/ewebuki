@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: global.inc.php,v 1.4 2004/07/22 19:11:19 chaot Exp $";
+    $main_script_name = "$Id: global.inc.php,v 1.5 2004/10/14 21:39:22 chaot Exp $";
     $main_script_desc = "main include file";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -72,7 +72,7 @@
     $ausgaben["output"] = "";
 
     // required libs
-    require $pathvars["libraries"]."function_nlreplace.inc.php"; // new line in <br> wandeln und formatieren
+    require $pathvars["libraries"]."function_nlreplace.inc.php"; // new line in <br /> wandeln und formatieren
     require $pathvars["libraries"]."function_intelilink.inc.php"; // intelligenter link funktion (kompatibel)
     require $pathvars["libraries"]."function_tagreplace.inc.php"; // tagreplace funktion
     require $pathvars["libraries"]."function_tagremove.inc.php"; // tagremove funktion

@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: dbclass_postgres.php,v 1.3 2004/09/24 10:07:00 chaot Exp $";
+    $main_script_name = "$Id: dbclass_postgres.php,v 1.4 2004/10/14 21:39:22 chaot Exp $";
     $main_script_desc = "abstraction object for postgres";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -328,7 +328,7 @@
         // new field_type function for pg
         function field_type($result,$int) {
             $fieldtype = pg_fieldtype($result,$int);
-            #echo $fieldtype.", ".$fieldlen."<br>";
+            #echo $fieldtype.", ".$fieldlen."<br />";
             #if ( strstr($fieldtype, "char") ) $fieldtype = "string";
             #if ( $fieldtype == "text" ) $fieldtype = "blob";
             return $fieldtype;

@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script_name = "$Id: function_rparser.inc.php,v 1.15 2004/10/05 19:28:44 chaot Exp $";
+  $script_name = "$Id: function_rparser.inc.php,v 1.16 2004/10/14 21:39:22 chaot Exp $";
   $Script_desc = "recursiver template parser";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -290,7 +290,7 @@
 
                   if ( strstr($rline,"###switchback###") ) {
                       $db -> selectDb(DATABASE,FALSE);
-                      #echo "<br>2: ".$db->getDb();
+                      #echo "<br />2: ".$db->getDb();
                       unset($specialvars["changed"]);
                       $rline = str_replace("###switchback###","",$rline);
                   }

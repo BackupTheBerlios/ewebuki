@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_inhalt_selector.inc.php,v 1.1 2003/10/06 19:12:20 chaot Exp $";
+// "$Id: function_inhalt_selector.inc.php,v 1.2 2004/10/14 21:39:22 chaot Exp $";
 // "Seiten Umschalter bauen";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -72,9 +72,9 @@
             $links = $position-$menge;
             $rechts = $position+$menge;
             if ( $position != 0 ) {
-                $inh_selector .= "<a href=\"".$pathvars["virtual"].$environment["ebene"]."/".$environment["kategorie"].",".$links.$parameter.".html".$getvalues."\"><img src=\"".$pathvars["images"]."sel_left.png\" height=\"9\" width=\"15\" border=\"0\" align=\"bottom\"></a> ";
+                $inh_selector .= "<a href=\"".$pathvars["virtual"].$environment["ebene"]."/".$environment["kategorie"].",".$links.$parameter.".html".$getvalues."\"><img src=\"".$pathvars["images"]."sel_left.png\" height=\"9\" width=\"15\" border=\"0\" align=\"bottom\" /></a> ";
             } else {
-                $inh_selector .= "<img src=\"".$pathvars["images"]."pos.png\" height=\"9\" width=\"15\" border=\"0\">";
+                $inh_selector .= "<img src=\"".$pathvars["images"]."pos.png\" height=\"9\" width=\"15\" border=\"0\" />";
             }
 
 
@@ -90,11 +90,11 @@
             // nur wenn teilbar, naechster shift - ansonsten beibehalten
             $faktor = $position / $selpages;
             if ( is_int($faktor) ) {
-                #echo "fak: ".$faktor."<br>";
+                #echo "fak: ".$faktor."<br />";
                 $shift  = $faktor * $selpages;
             } else {
                 $faktor = (int)$faktor;
-                #echo "fak: ".$faktor."<br>";
+                #echo "fak: ".$faktor."<br />";
                 $shift  = $faktor * $selpages;
             }
 
@@ -153,9 +153,9 @@
                 if ( $art == 1 ) {
                     $inh_selector .= $weiter;
                 }
-                $inh_selector .= "<a href=\"".$pathvars["virtual"].$environment["ebene"]."/".$environment["kategorie"].",".$rechts.$parameter.".html".$getvalues."\"><img src=\"".$pathvars["images"]."sel_right.png\" height=\"9\" width=\"15\" border=\"0\" align=\"bottom\"></a> ";
+                $inh_selector .= "<a href=\"".$pathvars["virtual"].$environment["ebene"]."/".$environment["kategorie"].",".$rechts.$parameter.".html".$getvalues."\"><img src=\"".$pathvars["images"]."sel_right.png\" height=\"9\" width=\"15\" border=\"0\" align=\"bottom\" /></a> ";
             } else {
-                $inh_selector .= "<img src=\"".$pathvars["images"]."pos.png\" height=\"9\" width=\"15\" border=\"0\">";
+                $inh_selector .= "<img src=\"".$pathvars["images"]."pos.png\" height=\"9\" width=\"15\" border=\"0\" />";
             }
         }
 

@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script["name"] = "$Id: view.inc.php,v 1.1 2003/11/13 12:26:36 chaot Exp $";
+  $script["name"] = "$Id: view.inc.php,v 1.2 2004/10/14 21:39:22 chaot Exp $";
   $Script["desc"] = "short description";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -61,8 +61,8 @@
     */
 
     $imgurl = $pathvars["webroot"].$pathvars["filebase"]["webdir"].$pathvars["filebase"]["pic"]["root"].$pathvars["filebase"]["pic"][$environment["parameter"][1]].$environment["parameter"][2];
-    $ausgaben["output"] = "<a href=\"".$_SERVER["HTTP_REFERER"]."\"><img border=\"0\" src=\"".$imgurl."\" alt=\"".$beschriftung."\"".$align.$border.$imgsize."></a>";
-    $ausgaben["output"] .= "<br><br><a href=\"".$_SERVER["HTTP_REFERER"]."\">Zurück</a>";
+    $ausgaben["output"] = "<a href=\"".$_SERVER["HTTP_REFERER"]."\"><img border=\"0\" src=\"".$imgurl."\" alt=\"".$beschriftung."\"".$align.$border.$imgsize." /></a>";
+    $ausgaben["output"] .= "<br /><br /><a href=\"".$_SERVER["HTTP_REFERER"]."\">Zurück</a>";
 
     if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= "[ ++ ".$script["name"]." ++ ]".$debugging["char"];
 
