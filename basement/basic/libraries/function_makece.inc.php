@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_makece.inc.php,v 1.7 2004/01/19 14:08:18 chaot Exp $";
+// "$Id: function_makece.inc.php,v 1.8 2004/01/20 12:09:35 chaot Exp $";
 // "content editor erstellen";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -48,7 +48,7 @@
         $ausgaben["ce_name"] = $ce_name;
 
         // vogelwilde regex die viel arbeit erspart hat
-        preg_match_all("/_([0-9]*)./",$ce_inhalt,$found);
+        preg_match_all("/_([0-9]*)\./",$ce_inhalt,$found);
         #$array = array_merge(explode(";",$fileid),$found[1]);
 
         // file memo auslesen und zuruecksetzen
