@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: usered.cfg.php-dist,v 1.1 2003/10/06 19:12:34 chaot Exp $";
+// "$Id: usered.cfg.php-dist,v 1.2 2003/10/14 14:29:49 chaot Exp $";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
     eWeBuKi - a easy website building kit
@@ -43,11 +43,35 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     // Tabellen
-    $data_entries = "set_it"; # tabellen name
-    $data_rows = "10";
+    #$data_entries = "auth_user"; # tabellen name
+    #$data_entries = "db_adrb";
+    #$data_rows = "10";
 
-    $environment["basis"] = $pathvars["virtual"]."/path/to/usered";
-    $environment["name"] = "usered";
+    #$environment["basis"] = $pathvars["virtual"]."/admin/usered";
+
+    #$environment["name"] = "usered";
+
+
+    $cfg = array(
+        "subdir"    => "intrabvv",
+        "name"      => "usered",
+        "basis"     => $pathvars["virtual"]."/admin/usered",
+        "function"  => array(
+                "modify",
+                "details",
+        #        "email",
+        ),
+        "db"        => array(
+                "entries"  => "db_adrb",
+                "key"      => "abid",
+                "order"    => "abnamkurz",
+                "rows"     => "15",
+        ),
+    );
+
+    // Rechte
+    $cfg["right"]["admin"] = "administration";
+    $cfg["right"]["sti"] = "sti";
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ?>
