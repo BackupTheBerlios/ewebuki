@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_content.inc.php,v 1.13 2005/03/18 08:39:07 chaot Exp $";
+// "$Id: function_content.inc.php,v 1.14 2005/04/03 11:48:16 chaot Exp $";
 // "content sprachabhaengig holen";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -62,7 +62,7 @@
         }
 
 
-        while ( strpos($line, "#(") || strpos($line, "g(") ) {
+        while ( strpos($line, "#(") !== false || strpos($line, "g(") !== false ) {
 
             // wo beginnt die marke
             $labelbeg = strpos($line,"#(");
@@ -174,7 +174,7 @@
             }
 
             // marke ersetzen
-            if ( strpos($line,$art) ) {
+            if ( strpos($line,$art) !== false ) {
                 $line = str_replace($art.$label.")",$replace,$line);
             }
         }
