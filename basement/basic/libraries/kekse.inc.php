@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $script_name = "$Id: kekse.inc.php,v 1.12 2004/10/10 03:24:23 chaot Exp $";
+    $script_name = "$Id: kekse.inc.php,v 1.13 2004/10/10 17:57:49 chaot Exp $";
     $Script_desc = "kekse erstellen";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -107,7 +107,8 @@
         #    $search = "= '".$value."'";
         #}
 
-        $search = "like '".$value."%'";
+        #$search = "like '".$value."%'"; // ich weiss nicht mehr warum
+        $search = "like '".$value."'";
         $sql = "SELECT site_".$mt.".mid,
                        site_".$mt.".refid,
                        site_".$mt.".entry,
