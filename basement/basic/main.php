@@ -1,6 +1,6 @@
 <?php $t_start = array_sum(explode(' ', microtime())); require "libraries/global.inc.php";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: main.php,v 1.9 2004/09/23 12:13:41 chaot Exp $";
+    $main_script_name = "$Id: main.php,v 1.10 2004/09/23 20:13:53 chaot Exp $";
     $main_script_desc = "haupt script";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -263,11 +263,11 @@
         include $pathvars["libraries"]."view.inc.php";
     }
 
+    // überschreiben von default werten
+    require $pathvars["config"]."overwrite.cfg.php";        
+    
     // steuerung der funktionen
     require $pathvars["config"]."addon.cfg.php";
-
-    // überschreiben von default werten
-    require $pathvars["config"]."overwrite.cfg.php";    
     
     // aenderungen durch webdesigner
     require $pathvars["templates"]."linking.inc.php";
