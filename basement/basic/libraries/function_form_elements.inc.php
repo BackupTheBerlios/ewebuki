@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_form_elements.inc.php,v 1.6 2004/11/03 17:16:56 chaot Exp $";
+// "$Id: function_form_elements.inc.php,v 1.7 2004/11/09 20:47:51 chaot Exp $";
 // "form_elements";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -47,10 +47,18 @@
     function form_elements( $table, $form_values, $extend = "" ) {
         global $db, $form_options, $defaults;
 
+        // wenn magic_quotes_gpc an ist muessen alle daten
+        // eines post von \ befreit werden.
+        if ( get_magic_quotes_gpc() ) {
+            $stripslashes = True;
+        }
+
         $columns = $db -> show_columns($table);
         #echo "<pre>".print_r($columns,True)."</pre>";
         foreach ( $columns as /* $key => */ $fields ) {
 
+            // stripslashes fuer das affenform
+            if ( $stripslashes == True ) $form_values[$fields["Field"]] = stripslashes($form_values[$fields["Field"]]);
 
             // not null bedeutet feld ausfuellen
             if ( $fields["Null"] == "" && $form_options[$fields["Field"]]["frequired"] == "" ) {
