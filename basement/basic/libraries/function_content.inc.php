@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_content.inc.php,v 1.10 2004/11/05 13:51:31 chaot Exp $";
+// "$Id: function_content.inc.php,v 1.11 2004/11/05 15:07:10 chaot Exp $";
 // "content sprachabhaengig holen";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -151,7 +151,7 @@
                 } else {
                     #$line = $line."# (".$label.")&nbsp;<a target=\"_top\" href=\"".$editurl.$convert.".html\">".$defaults["cms-tag"]["signal"].$signal.$defaults["cms-tag"]["/signal"]."</a><br />\n";
                     #$ausgaben["inaccessible"] .= "# (".$label.")&nbsp;#(".$label.")<a target=\"_top\" href=\"".$editurl.$convert.".html\">".$defaults["cms-tag"]["signal"].$signal.$defaults["cms-tag"]["/signal"]."</a><br />\n";
-                    if ( $ausgaben["inaccessible"] != "" ) $ausgaben["inaccessible"] .= "# (".$label.")&nbsp;#(".$label.")<br />\n";
+                    $ausgaben["inaccessible"] .= "# (".$label.")&nbsp;#(".$label.")<br />\n";
                 }
             }
             }
