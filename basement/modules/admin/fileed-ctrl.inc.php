@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script["name"] = "$Id: fileed-ctrl.inc.php,v 1.3 2004/11/08 20:28:13 chaot Exp $";
+  $script["name"] = "$Id: fileed-ctrl.inc.php,v 1.4 2004/11/08 22:33:03 chaot Exp $";
   $Script["desc"] = "datei manager ctrl";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -56,6 +56,14 @@
         $specialvars["editlock"] = 0;
     } else {
         $specialvars["editlock"] = -1;
+    }
+
+    // NUR BIS ZUM UMBAU HIER!!! unzugaengliche #(marken) sichtbar machen
+    if ( isset($HTTP_GET_VARS["edit"]) ) {
+        $ausgaben["inaccessible"] = "inaccessible values:<br />";
+        #$ausgaben["inaccessible"] .= "# (error_?) #(error_?)<br />";
+    } else {
+        $ausgaben["inaccessible"] = "";
     }
 
     // magic include loader
