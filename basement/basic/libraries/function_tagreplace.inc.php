@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_tagreplace.inc.php,v 1.6 2003/12/12 16:09:49 chaot Exp $";
+// "$Id: function_tagreplace.inc.php,v 1.7 2004/07/22 15:37:58 chaot Exp $";
 // "tagreplace funktion";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -277,8 +277,9 @@
                         } else {
                             $beschriftung = $tagwerte[1];
                         }
-                        $ausgaben["linka"] = "";
-                        $ausgaben["linkb"] = "";
+
+                        $linka = "";
+                        $linkb = "";
                         if ( !strstr($imgwerte[0], "/") ) {
                             $imgfile = $pathvars["fileroot"]."images/".$environment["design"]."/".$imgwerte[0];
                             if ( file_exists($imgfile) ) {
@@ -390,9 +391,6 @@
                                 }
                             }
                         }
-                        #$ausgabewert = "<img src=\"".$imgurl."\" alt=\"".$beschriftung."\"".$align.$border.$imgsize.">";
-                        #$ausgaben["align"] = $align;
-                        #$ausgaben["imgurl"] = $imgurl;
                         $ausgaben["alt"] = $beschriftung;
                         $ausgaben["beschriftung"] = $beschriftung;
 
