@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_tagreplace.inc.php,v 1.12 2004/09/23 12:25:45 chaot Exp $";
+// "$Id: function_tagreplace.inc.php,v 1.13 2004/09/23 16:09:23 chaot Exp $";
 // "tagreplace funktion";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -276,6 +276,16 @@
                         } else {
                             $border = "";
                         }
+                        if ($imgwerte[4] == "" ) {
+                            $vspace = "";
+                        } else {
+                            $vspace = "vspace=\"".$imgwerte[4]."\"";
+                        }
+                        if ($imgwerte[5] == "" ) {
+                            $hspace = "";
+                        } else {
+                            $hspace = "hspace=\"".$imgwerte[5]."\"";
+                        }                                                                      
                         if ( $tagwerte[1] == "" ) {
                             $beschriftung = $imgwerte[0];
                         } else {
@@ -317,7 +327,7 @@
                                 }
                             }
                         }
-                        $ausgabewert = $linka."<img src=\"".$imgurl."\" alt=\"".$beschriftung."\"".$align.$border.$imgsize.">".$linkb;
+                        $ausgabewert = $linka."<img src=\"".$imgurl."\" ".$vspace.$hspace."alt=\"".$beschriftung."\"".$align.$border.$imgsize.">".$linkb;
                         $replace = str_replace($opentag.$tagwert.$endtag,$ausgabewert,$replace);
                         break;
                     case "[IMGB=":
