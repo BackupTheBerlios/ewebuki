@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_form_errors.inc.php,v 1.2 2004/10/14 21:39:22 chaot Exp $";
+// "$Id: function_form_errors.inc.php,v 1.3 2004/11/06 18:09:15 chaot Exp $";
 // "form_errors";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -48,7 +48,7 @@
 
     function form_errors( $form_options, $form_values ) {
         global $ausgaben;
-        $ausgaben["form_error"] = "";
+        #$ausgaben["form_error"] = "";
         if ( is_array($form_options) && count($form_values) > 0 ) {
             // form options durchlaufen
             foreach($form_options as $name => $value) {
