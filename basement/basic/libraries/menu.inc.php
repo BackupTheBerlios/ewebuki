@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script_name = "$Id: menu.inc.php,v 1.4 2004/10/06 21:51:49 chaot Exp $";
+  $script_name = "$Id: menu.inc.php,v 1.5 2004/11/04 21:53:19 chaot Exp $";
   $Script_desc = "menu generieren - 3 stufen ";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -124,7 +124,7 @@
                   }
                 }
 
-                if ( strpos($environment["ebene"],$level1array["entry"]) == 1 && $aktlev == $aktdb || ( $environment["kategorie"] == $level1array["entry"] && $environment["ebene"] == "" && $aktlev == $aktdb ) ) {
+                if ( @strpos($environment["ebene"],$level1array["entry"]) == 1 && $aktlev == $aktdb || ( $environment["kategorie"] == $level1array["entry"] && $environment["ebene"] == "" && $aktlev == $aktdb ) ) {
                     // open folder
                     $ausgaben["ordner"] = str_replace($marken,$ersatz,$cfg["menu"]["level1"]["icona"]);
 
