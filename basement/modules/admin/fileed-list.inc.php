@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: fileed-list.inc.php,v 1.6 2003/11/13 21:46:48 chaot Exp $";
+// "$Id: fileed-list.inc.php,v 1.7 2003/11/18 17:33:44 chaot Exp $";
 // "short description";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -329,17 +329,17 @@
             break;
 
         case 1:
-            $ausgaben["filemodify"] = "<a href=\"".$cfg["basis"]."/describe,edit.html\">[ Metadaten bearbeiten ]</a>";
-            $ausgaben["filedel"]    = "<a href=\"".$cfg["basis"]."/list,delete.html\">[ ausgewählte Datei löschen ]</a>";
+            $ausgaben["filemodify"] = "<a href=\"".$cfg["basis"]."/describe,edit.html\">#(describe)</a>";
+            $ausgaben["filedel"]    = "<a href=\"".$cfg["basis"]."/list,delete.html\">#(delete1)</a>";
             break;
 
         default:
-            $ausgaben["filemodify"] = "<a href=\"".$cfg["basis"]."/describe,edit.html\">[ Metadaten bearbeiten ]</a>";
-            $ausgaben["filedel"]    = "<a href=\"".$cfg["basis"]."/list,delete.html\">[ Ausgewählte Dateien löschen ]</a>";
+            $ausgaben["filemodify"] = "<a href=\"".$cfg["basis"]."/describe,edit.html\">#(describe)</a>";
+            $ausgaben["filedel"]    = "<a href=\"".$cfg["basis"]."/list,delete.html\">#(delete2)</a>";
     }
 
     if ($HTTP_SESSION_VARS["return"]) {
-        $ausgaben["send_image"] = "<a href=".$HTTP_SESSION_VARS["return"]."?referer=".$HTTP_SESSION_VARS["referer"].">[ Zum Beitrag ]</a>";
+        $ausgaben["send_image"] = "<a href=".$HTTP_SESSION_VARS["return"]."?referer=".$HTTP_SESSION_VARS["referer"].">#(send_image)</a>";
     } else {
         $ausgaben["send_image"] = "";
     }
