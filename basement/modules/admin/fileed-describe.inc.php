@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: fileed-describe.inc.php,v 1.3 2003/11/13 14:18:14 chaot Exp $";
+// "$Id: fileed-describe.inc.php,v 1.4 2003/11/13 20:34:44 chaot Exp $";
 // "short description";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -243,11 +243,7 @@
         $element = form_elements( $cfg["db"]["entries"], $form_values );
 
         // form elemente erweitern
-
-        $element["upload"] = "Ersetzen durch<br>";
-        $element["upload"] .= "<input type=\"file\" name=\"upload\">";
-        $element["upload"] .= "<br><br>Die Endung der vorhandenen Datei muﬂ mit der Endung der neuen Datei identisch sein!";
-
+        $element["upload"] = "#(upa)<br><input type=\"file\" name=\"upload\"><br>#(upb)";
 
         // was anzeigen
         #$mapping["main"] = crc32($environment["ebene"]).".modify";
