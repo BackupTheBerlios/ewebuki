@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $script_name = "$Id: cms.inc.php,v 1.2 2003/12/12 14:08:10 chaot Exp $";
+    $script_name = "$Id: cms.inc.php,v 1.3 2003/12/17 07:41:49 chaot Exp $";
     $Script_desc = "eWeBuKi cms editor";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -196,7 +196,7 @@
             }
             $result  = $db -> query($sql);
 
-            if ( $HTTP_POST_VARS["image"] == "add" || $HTTP_POST_VARS["upload"] > 0 ) {
+            if ( $HTTP_POST_VARS["add"] || $HTTP_POST_VARS["upload"] > 0 ) {
 
                 session_register("referer");
                 $HTTP_SESSION_VARS["referer"] = $ausgaben["form_referer"];
