@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: overwrite.cfg.php-dist,v 1.9 2004/11/08 18:42:28 chaot Exp $";
+// "$Id: overwrite.cfg.php-dist,v 1.10 2004/11/08 18:45:18 chaot Exp $";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
     eWeBuKi - a easy website building kit
@@ -49,6 +49,9 @@
   #$defaults["split"]["m2"] = " - ";
   #$defaults["split"]["l1"] = " # ";
   #$defaults["split"]["l2"] = " - ";
+
+  // wo liegen die bilder fuer die editor schaltflachen?
+  #$defaults["cms-tag"]["path"] = $pathvars["images"];
 
   // tipp:
   // bei eigenen bildern, kann anstatt '/images/default/' - '".$pathvars["images"]."' verwendet werden
