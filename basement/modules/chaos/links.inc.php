@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $script_name = "$Id: links.inc.php,v 1.1 2003/10/06 19:12:26 chaot Exp $";
+    $script_name = "$Id: links.inc.php,v 1.2 2004/11/17 09:52:05 chaot Exp $";
     $Script_desc = "links verwaltung";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -121,7 +121,7 @@
         $links_complete .= $links_line."<br>";
       }
     }
-    $output .= "<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">";
+    $output .= "<table width=\"99%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">";
       $output .= "<tr>";
     $output .= "<td colspan=\"3\">".$links_kekse."</td>";
       $output .= "</tr>";
