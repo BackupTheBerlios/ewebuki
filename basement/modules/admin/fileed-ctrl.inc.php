@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script["name"] = "$Id: fileed-ctrl.inc.php,v 1.2 2003/10/12 01:01:27 chaot Exp $";
+  $script["name"] = "$Id: fileed-ctrl.inc.php,v 1.3 2004/11/08 20:28:13 chaot Exp $";
   $Script["desc"] = "datei manager ctrl";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -45,8 +45,18 @@
 
     if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= "[ ** ".$script["name"]." ** ]".$debugging["char"];
 
-    // content umschaltung verhindern
-    $specialvars["dynlock"] = True;
+    // warnung ausgeben
+    if ( get_cfg_var('register_globals') == 1 ) $debugging["ausgabe"] .= "Warnung: register_globals in der php.ini steht auf on, evtl werden interne Variablen ueberschrieben!".$debugging["char"];
+
+    // path fuer die schaltflaechen anpassen
+    if ( $cfg["iconpath"] == "" ) $cfg["iconpath"] = "/images/default/";
+
+    // label bearbeitung aktivieren
+    if ( isset($HTTP_GET_VARS["edit"]) ) {
+        $specialvars["editlock"] = 0;
+    } else {
+        $specialvars["editlock"] = -1;
+    }
 
     // magic include loader
     if ( in_array($environment["kategorie"], $cfg["function"]) ) {
