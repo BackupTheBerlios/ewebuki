@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $script_name = "$Id: auth.inc.php,v 1.6 2004/07/29 15:43:15 chaot Exp $";
+    $script_name = "$Id: auth.inc.php,v 1.7 2004/09/22 02:12:32 chaot Exp $";
     $Script_desc = "authentifikation modul (mysql encrypt/ php crypt)";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -78,7 +78,11 @@
             $HTTP_SESSION_VARS["username"] = $AUTH[$cfg["db"]["user"]["name"]];
             session_register("custom");
             $HTTP_SESSION_VARS["custom"] = $AUTH[$cfg["db"]["user"]["custom"]];
-            $destination = str_replace($pathvars["virtual"],$pathvars["virtual"]."/auth",$pathvars["requested"]);
+            if ( $pathvars["virtual"] != "" ) {
+              $destination = str_replace($pathvars["virtual"],$pathvars["virtual"]."/auth",$pathvars["requested"]);
+            } else {
+              $destination = "/auth".$pathvars["requested"];
+            }
             header("Location: ".$destination);
         } else {
             session_start();
