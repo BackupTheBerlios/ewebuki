@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $script_name = "$Id: function_parser.inc.php,v 1.2 2004/09/25 12:07:17 chaot Exp $";
+    $script_name = "$Id: function_parser.inc.php,v 1.3 2004/10/05 19:28:44 chaot Exp $";
     $Script_desc = "parser for sub templates";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -130,8 +130,8 @@
                     // hier alles eintragen was einmal pro zeile passieren soll
 
                     // image path anpassen
-                    if ( strstr($parse_mod,"../../images/".$environment["design"]."/") ) {
-                        $parse_mod=str_replace("../../images/".$environment["design"]."/",$pathvars["images"],$parse_mod);
+                    if ( strstr($parse_mod,"../../images/") ) {
+                        $parse_mod=str_replace("../../images/","/images/",$parse_mod);
                     }
 
                     // image language korrektur
