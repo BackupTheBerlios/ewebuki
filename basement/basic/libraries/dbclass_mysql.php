@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: dbclass_mysql.php,v 1.2 2004/09/22 02:16:15 chaot Exp $";
+    $main_script_name = "$Id: dbclass_mysql.php,v 1.3 2004/09/22 02:18:05 chaot Exp $";
     $main_script_desc = "abstraction object for mysql";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -68,7 +68,7 @@
             $host = $this->HOST;
             $db   = $this->DB;
             $conn = mysql_connect($host,$user,$pass);
-            $return = "success";
+            $return = true;
             
             // error-handling first for connection, second for
             // db-finding
