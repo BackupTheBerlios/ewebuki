@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_makece.inc.php,v 1.2 2003/10/11 12:01:38 chaot Exp $";
+// "$Id: function_makece.inc.php,v 1.3 2003/11/13 20:15:20 chaot Exp $";
 // "content editor erstellen";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -64,14 +64,19 @@
         // wenn es thumbnails gibt, anzeigen
         if ( count($array) >= 1 ) {
             $merken = $db -> getDb();
-            $db -> selectDB("intrabvv","");
+            if ( $merken != DATABASE ) {
+                echo tet;
+                $db -> selectDB( DATABASE ,"");
+            }
             foreach ( $array as $value ) {
                 if ( $where != "" ) $where .= " OR ";
                 $where .= "fid = '".$value."'";
             }
             $sql = "SELECT * FROM site_file WHERE ".$where;
             $result = $db -> query($sql);
-            $db -> selectDB($merken,"");
+            if ( $merken != DATABASE ) {
+                $db -> selectDB($merken,"");
+            }
             $extension= "";
 
             $tn = "<table><tr><td>";
