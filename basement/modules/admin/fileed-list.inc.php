@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: fileed-list.inc.php,v 1.2 2003/10/12 01:01:27 chaot Exp $";
+// "$Id: fileed-list.inc.php,v 1.3 2003/10/14 09:43:40 chaot Exp $";
 // "short description";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -219,6 +219,11 @@
                     $HTTP_SESSION_VARS["images_memo"][$environment["parameter"][2]] = $environment["parameter"][2];
               }
         }
+        if ( $HTTP_GET_VARS["search"] != "" ) {
+            $anhang = "?".$getvalues;
+        } else {
+            $anhang = "";
+        }
 
         // daten holen, row spulen
 
@@ -232,12 +237,12 @@
 
             if (is_array($HTTP_SESSION_VARS["images_memo"])) {
                 if (in_array($fid,$HTTP_SESSION_VARS["images_memo"])) {
-                    $cb = "<a href=".$cfg["basis"]."/list,".$environment["parameter"][1].",".$fid.".html><img src=".$pathvars["images"]."cms-cb1.png border=0></a>";
+                    $cb = "<a href=".$cfg["basis"]."/list,".$environment["parameter"][1].",".$fid.".html".$anhang."><img src=".$pathvars["images"]."cms-cb1.png border=0></a>";
                 } else {
-                    $cb = "<a href=".$cfg["basis"]."/list,".$environment["parameter"][1].",".$fid.".html><img src=".$pathvars["images"]."cms-cb0.png border=0></a>";
+                    $cb = "<a href=".$cfg["basis"]."/list,".$environment["parameter"][1].",".$fid.".html".$anhang."><img src=".$pathvars["images"]."cms-cb0.png border=0></a>";
                 }
             } else {
-                $cb = "<a href=".$cfg["basis"]."/list,".$environment["parameter"][1].",".$fid.".html><img src=".$pathvars["images"]."cms-cb0.png border=0></a>";
+                $cb = "<a href=".$cfg["basis"]."/list,".$environment["parameter"][1].",".$fid.".html".$anhang."><img src=".$pathvars["images"]."cms-cb0.png border=0></a>";
             }
 
             //morhart test
