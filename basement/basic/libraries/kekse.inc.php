@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $script_name = "$Id: kekse.inc.php,v 1.6 2004/09/23 20:16:25 chaot Exp $";
+    $script_name = "$Id: kekse.inc.php,v 1.7 2004/09/26 13:20:11 chaot Exp $";
     $Script_desc = "kekse erstellen";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -71,7 +71,7 @@
         unset($dynamiccss);
     }
 
-    $environment["kekse"] = "<a href=\"".$pathvars["virtual"]."/\">".$specialvars["rootname"]."</a>";
+    $environment["kekse"] = "<a href=\"".$pathvars["virtual"]."/index.html\">".$specialvars["rootname"]."</a>";
 
     // special eintraege markieren
     #$special = array( "list", "details", "modify", "start" );

@@ -1,6 +1,6 @@
 <?php $t_start = array_sum(explode(' ', microtime())); require "libraries/global.inc.php";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: main.php,v 1.10 2004/09/23 20:13:53 chaot Exp $";
+    $main_script_name = "$Id: main.php,v 1.11 2004/09/26 13:20:11 chaot Exp $";
     $main_script_desc = "haupt script";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -53,7 +53,12 @@
 
     $pathvars["requested"] = explode("?", $_SERVER["REQUEST_URI"]);
     $pathvars["requested"] = $pathvars["requested"][0];
-    if ( $pathvars["requested"] == "/" ) $pathvars["requested"] = "/index.html"; ###
+    
+    // url ohne .html wird auf index.html gesetzt    
+    if ( !strstr($pathvars["requested"],".html") ) {
+       $pathvars["requested"] = $pathvars["requested"]."index.html"; ###
+    }
+    
     if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= "pathvars requested: ".$pathvars["requested"].$debugging["char"];
 
     $pathvars["level"] = explode("/", $pathvars["requested"]);
