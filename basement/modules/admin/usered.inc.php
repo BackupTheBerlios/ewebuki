@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $script_name = "$Id: usered.inc.php,v 1.3 2004/11/08 20:58:26 chaot Exp $";
+    $script_name = "$Id: usered.inc.php,v 1.4 2004/11/09 01:52:58 chaot Exp $";
     $Script_desc = "User Management Applikation";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -56,6 +56,14 @@
           $specialvars["editlock"] = 0;
       } else {
           $specialvars["editlock"] = -1;
+      }
+
+      // NUR BIS ZUM UMBAU HIER!!! unzugaengliche #(marken) sichtbar machen
+      if ( isset($HTTP_GET_VARS["edit"]) ) {
+          $ausgaben["inaccessible"] = "inaccessible values:<br />";
+          #$ausgaben["inaccessible"] .= "# (error_?) #(error_?)<br />";
+      } else {
+          $ausgaben["inaccessible"] = "";
       }
 
       //
