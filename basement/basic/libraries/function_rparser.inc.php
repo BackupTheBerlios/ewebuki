@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script_name = "$Id: function_rparser.inc.php,v 1.3 2003/11/18 08:25:58 chaot Exp $";
+  $script_name = "$Id: function_rparser.inc.php,v 1.4 2003/11/18 17:31:16 chaot Exp $";
   $Script_desc = "recursiver template parser";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -86,6 +86,18 @@
               }
 
       //////////////////////////////////////////////////////////////////////////////////////////////
+      // language "#(label)" - erster lauf: hier kommt der text anhand von sprache,
+      //                       template und marke aus der datenbank
+      //                       ( der content kann !#ausgaben_xxx enthalten )
+      //////////////////////////////////////////////////////////////////////////////////////////////
+
+              if ( strstr($line,"#(") ) {
+                // wie heisst das template
+                $tname = substr($startfile,0,strpos($startfile,".tem.html"));
+                $line = content($line, $tname);
+              }
+
+      //////////////////////////////////////////////////////////////////////////////////////////////
       // variable "!#marke" - hier werden die variablen in die ausgabe eingebaut
       //////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -117,8 +129,10 @@
                 }
 
       //////////////////////////////////////////////////////////////////////////////////////////////
-      // language "#(label)" - hier kommt der text anhand von sprache,
+      // language "#(label)" - zweiter lauf: hier kommt der text anhand von sprache,
       //                       template und marke aus der datenbank
+      //                       ( wurde bei !#ausgaben_xxx ein #(label) eingebaut
+      //                       wird auch dieses mit content versehen )
       //////////////////////////////////////////////////////////////////////////////////////////////
 
               if ( strstr($line,"#(") ) {
