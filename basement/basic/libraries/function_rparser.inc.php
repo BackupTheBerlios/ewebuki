@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script_name = "$Id: function_rparser.inc.php,v 1.7 2004/01/20 10:44:47 chaot Exp $";
+  $script_name = "$Id: function_rparser.inc.php,v 1.8 2004/03/03 09:00:30 chaot Exp $";
   $Script_desc = "recursiver template parser";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -75,9 +75,16 @@
                 $line=str_replace("../../images/".$environment["design"]."/",$pathvars["images"],$line);
               }
 
-              // style path korrektur
+              // style path korrektur + dynamic style
               if ( (strstr($line,"../../css/".$environment["design"].".css"))) {
-                $line=str_replace("../../css/".$environment["design"].".css",$pathvars["webcss"].$environment["design"].".css",$line);
+                if ( substr($specialvars["dynamic_css"],0,1) == "_" ) {
+                    $stylename = $environment["design"].$specialvars["dynamic_css"];
+                } elseif ( $specialvars["dynamic_css"] != "" ) {
+                    $stylename = $specialvars["dynamic_css"];
+                } else {
+                    $stylename = $environment["design"];
+                }
+                $line=str_replace("../../css/".$environment["design"].".css",$pathvars["webcss"].$stylename.".css",$line);
               }
 
               // image language korrektur
