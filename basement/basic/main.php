@@ -1,6 +1,6 @@
 <?php $t_start = array_sum(explode(' ', microtime())); require "libraries/global.inc.php";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: main.php,v 1.5 2003/12/02 05:40:13 chaot Exp $";
+    $main_script_name = "$Id: main.php,v 1.6 2004/09/20 07:32:59 chaot Exp $";
     $main_script_desc = "haupt script";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -237,7 +237,7 @@
     // rekursiven parser aufrufen
     if ( $HTTP_POST_VARS["print"] != "" || $HTTP_GET_VARS["print"] != "" ) {
         $debugging["html_enable"] = 0;
-        $print_template = $HTTP_POST_VARS["print"].$HTTP_GET_VARS["print"];
+        $print_template = $HTTP_POST_VARS["print"][2].$HTTP_GET_VARS["print"][2];
         rparser( $print_template.".tem.html", $specialvars["default_template"].".tem.html");
     } elseif ( $HTTP_POST_VARS["hijack"] != "" || $HTTP_GET_VARS["hijack"] != "" ) {
         foreach ( $HTTP_GET_VARS as $key => $value ) {
