@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_form_elements.inc.php,v 1.2 2003/10/11 12:01:38 chaot Exp $";
+// "$Id: function_form_elements.inc.php,v 1.3 2003/11/13 12:18:40 chaot Exp $";
 // "form_elements";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -184,6 +184,7 @@
                 ( $form_options[$fields["Field"]]["fclass"] != "" ) ? $class = " class=\"".$form_options[$fields["Field"]]["fclass"]."\"" : $class = " class=\"".$form_defaults["class"]["date"]."\"";;
                 ( $form_options[$fields["Field"]]["fstyle"] != "" ) ? $style = " style=\"".$form_options[$fields["Field"]]["fstyle"]."\"" : $style = "";
                 ( strstr($form_options[$fields["Field"]]["foption"], "readonly") ) ? $readonly = " readonly" : $readonly = "";
+                ( strstr($form_options[$fields["Field"]]["foption"], "hidden") ) ? $type = "hidden" : $type = "";
                 $maxlength = strstr($fields["Type"],"(");
                 $maxlength = str_replace("("," maxlength=\"",$maxlength);
                 $maxlength = str_replace(")","\"",$maxlength);
