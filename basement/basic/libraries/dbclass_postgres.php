@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: dbclass_postgres.php,v 1.5 2005/02/24 09:03:00 chaot Exp $";
+    $main_script_name = "$Id: dbclass_postgres.php,v 1.6 2005/02/24 09:12:26 chaot Exp $";
     $main_script_desc = "abstraction object for postgres";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -295,7 +295,8 @@
         }
 
         function data_seek($result,$offset) {
-            pg_data_seek($result,$offset);
+            $success = pg_result_seek($result,$offset);
+            return $success;
         }
 
         function free_result($result) {
