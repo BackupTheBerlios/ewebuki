@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_tagreplace.inc.php,v 1.22 2004/11/15 01:53:33 chaot Exp $";
+// "$Id: function_tagreplace.inc.php,v 1.23 2004/12/02 15:27:02 chaot Exp $";
 // "tagreplace funktion";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -139,6 +139,21 @@
                         break;
                     case "[BR]":
                         $replace = str_replace($opentag.$tagwert.$endtag,"<br />",$replace);
+                        break;
+                    case "[BR=":
+                        $tagwerte = explode("]",$tagwert,2);
+                        $brwerte = explode(";",$tagwerte[0]);
+                        if ( $brwerte[0] == "a" ) {
+                            $clear = "all";
+                        } elseif ( $brwerte[1] == "l" ) {
+                            $clear = "left";
+                        } elseif ( $brwerte[1] == "r" ) {
+                            $clear = "right";
+                        } else {
+                            $clear = "";
+                        }
+                        if ( $clear != "" ) $clear = " clear=\"".$clear."\"";
+                        $replace = str_replace($opentag.$tagwert.$endtag,"<br ".$clear."/>",$replace);
                         break;
                     case "[SP]":
                         $replace = str_replace($opentag.$tagwert.$endtag,"&nbsp;",$replace);
