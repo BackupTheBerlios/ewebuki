@@ -1,6 +1,6 @@
 <?php require "libraries/global.inc.php";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: main.php,v 1.1 2003/10/06 19:12:19 chaot Exp $";
+    $main_script_name = "$Id: main.php,v 1.2 2003/10/11 12:01:37 chaot Exp $";
     $main_script_desc = "haupt script";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -201,8 +201,10 @@
     require $pathvars["libraries"]."auth.inc.php";
 
 
-    if ( $environment["katid"] == "cms" ) {
+    if ( $environment["katid"] == "cms") {
         include $pathvars["libraries"]."cms.inc.php";
+    } elseif ($environment["katid"] == "fileed") {
+        #keine session variable ebene und kategorie erzeugen (mor 1909)
     } else {
         if ( strstr($_SERVER["REQUEST_URI"],"/auth/") ) {
             session_register("page");

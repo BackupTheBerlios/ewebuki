@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_tagreplace.inc.php,v 1.1 2003/10/06 19:12:21 chaot Exp $";
+// "$Id: function_tagreplace.inc.php,v 1.2 2003/10/11 12:01:38 chaot Exp $";
 // "tagreplace funktion";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -88,6 +88,7 @@
                 // kompletten tag mit tagwert ersetzen
                 switch ($opentag) {
                     case "[B]":
+                        #$replace = str_replace($opentag.$tagwert.$endtag,"<span class=\"fkrcontentlead\">".$tagwert."</span>",$replace);
                         $replace = str_replace($opentag.$tagwert.$endtag,"<b>".$tagwert."</b>",$replace);
                         break;
                     case "[I]":
