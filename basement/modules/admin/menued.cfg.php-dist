@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: menued.cfg.php-dist,v 1.1 2003/10/06 19:12:24 chaot Exp $";
+// "$Id: menued.cfg.php-dist,v 1.2 2003/10/12 00:53:34 chaot Exp $";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
     eWeBuKi - a easy website building kit
@@ -50,7 +50,7 @@
 
     $cfg["db"]["change"] = 0;
     $cfg["fqdn0"] = "www";
-    $cfg["right"]["admin"] = "cms_admin";
+    $cfg["right"]["admin"] = "administration";
 
     // Form Settings
     $form_defaults["class"]["textfield"] = " class=\"class\"";
