@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_tagreplace.inc.php,v 1.20 2004/10/14 21:39:22 chaot Exp $";
+// "$Id: function_tagreplace.inc.php,v 1.21 2004/10/15 00:04:30 chaot Exp $";
 // "tagreplace funktion";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -491,7 +491,7 @@
                         } elseif ( $colwerte[2] == "g" ) {
                             $valign = " valign=\"baseline\"";
                         } else {
-                            $valign = "\"top\"";
+                            $valign = " valign=\"top\"";
                         }
                         $replace = str_replace($opentag.$tagwert.$endtag,"<td".$align.$width.$valign.">".$tagwerte[1]."</td>",$replace);
                         break;
