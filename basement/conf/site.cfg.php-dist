@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: site.cfg.php-dist,v 1.7 2004/09/23 12:00:36 chaot Exp $";
+// "$Id: site.cfg.php-dist,v 1.8 2004/09/26 21:20:31 chaot Exp $";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
     eWeBuKi - a easy website building kit
@@ -77,7 +77,7 @@
     // ACHTUNG **************
 
     // datei variablen
-    $pathvars["filebase"]["maindir"] = $_SERVER["DOCUMENT_ROOT"]."/file/"; // pfad der dateien im filesystem
+    $pathvars["filebase"]["maindir"] = $pathvars["fileroot"]."file/"; // pfad der dateien im filesystem
     $pathvars["filebase"]["webdir"] = "/file/"; // pfad der dateien auf dem webserver
     $pathvars["filebase"]["new"] = "new/";
     $pathvars["filebase"]["pic"]["root"] = "picture/";
