@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: dbclass_mysql.php,v 1.3 2004/09/22 02:18:05 chaot Exp $";
+    $main_script_name = "$Id: dbclass_mysql.php,v 1.4 2004/09/24 10:04:16 chaot Exp $";
     $main_script_desc = "abstraction object for mysql";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -68,7 +68,7 @@
             $host = $this->HOST;
             $db   = $this->DB;
             $conn = mysql_connect($host,$user,$pass);
-            $return = true;
+            $return = false;
             
             // error-handling first for connection, second for
             // db-finding
@@ -96,15 +96,14 @@
             $host = $this->HOST;
             $db   = $this->DB;
             $conn = mysql_pconnect($host,$user,$pass);
-            $return = true;
+            $return = false;
 
             // error-handling first for connection, second for
             // db-finding
 
             if(!$conn) {
                 if ( $host == "" ) $host = "localhost";            
-                $return = $this->error("Connection to $db on $host failed.");
-                
+                $return = $this->error("Connection to $db on $host failed.");                
             }
 
             if($this->ROOT_RUN != "yes") {
