@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $script_name = "$Id: auth.inc.php,v 1.4 2003/11/13 13:05:09 chaot Exp $";
+    $script_name = "$Id: auth.inc.php,v 1.5 2003/11/13 13:11:21 chaot Exp $";
     $Script_desc = "authentifikation modul (mysql encrypt/ php crypt)";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -134,9 +134,6 @@
         $ausgaben["logout_meldung"] = "\"".$HTTP_SESSION_VARS["username"]."\"";
         $ausgaben["logout_rechte"] = "";
 
-
-        #$funktionen = array("leveled","usered","menued","fileed","passed");
-        #foreach( $funktionen as $funktion ) {
         foreach( $cfg["menu"] as $funktion => $werte) {
             $array = explode(";", $werte[1]);
             foreach( $array as $value) {
