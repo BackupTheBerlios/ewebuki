@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script_name = "$Id: menued.inc.php,v 1.1 2003/10/06 19:12:25 chaot Exp $";
+  $script_name = "$Id: menued.inc.php,v 1.2 2003/10/12 01:01:27 chaot Exp $";
   $Script_desc = "Menu Management Applikation (alpha)";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -45,9 +45,10 @@
 
     if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= "[ ** $script_name ** ]".$debugging["char"];
 
+    // content umschaltung verhindern
+    $specialvars["dynlock"] = True;
 
     if ( $rechte[$cfg["right"]["admin"]] == -1 ) {
-
 
         if ( $cfg["db"]["change"] == -1 ) {
             // lokale db auswaehlen
@@ -483,10 +484,9 @@
 
         if ( $cfg["db"]["change"] == -1 ) {
             // globale db auswaehlen
-            if ( $db_db != "" ) {
                 $db -> selectDb(DATABASE,FALSE);
-            }
         }
+
     } else {
         header("Location: ".$pathvars["webroot"]."/".$environment["design"]."/".$environment["language"]."/index.html");
     }

@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script["name"] = "$Id: fileed-ctrl.inc.php,v 1.1 2003/10/06 19:12:23 chaot Exp $";
+  $script["name"] = "$Id: fileed-ctrl.inc.php,v 1.2 2003/10/12 01:01:27 chaot Exp $";
   $Script["desc"] = "datei manager ctrl";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -44,6 +44,9 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= "[ ** ".$script["name"]." ** ]".$debugging["char"];
+
+    // content umschaltung verhindern
+    $specialvars["dynlock"] = True;
 
     // magic include loader
     if ( in_array($environment["kategorie"], $cfg["function"]) ) {

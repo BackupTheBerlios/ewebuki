@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script["name"] = "$Id: passed.inc.php,v 1.1 2003/10/06 19:12:25 chaot Exp $";
+  $script["name"] = "$Id: passed.inc.php,v 1.2 2003/10/12 01:01:27 chaot Exp $";
   $Script["desc"] = "user password change";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -44,6 +44,9 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= "[ ** ".$script["name"]." ** ]".$debugging["char"];
+
+    // content umschaltung verhindern
+    $specialvars["dynlock"] = True;
 
     // warning ausgeben
     if ( get_cfg_var('register_globals') == 1 ) $debugging["ausgabe"] .= "Warning register_globals in der php.ini steht auf on, evtl werden interne Variablen ueberschrieben!".$debugging["char"];
