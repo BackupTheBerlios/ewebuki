@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $script_name = "$Id: auth.inc.php,v 1.3 2003/11/13 12:12:17 chaot Exp $";
+    $script_name = "$Id: auth.inc.php,v 1.4 2003/11/13 13:05:09 chaot Exp $";
     $Script_desc = "authentifikation modul (mysql encrypt/ php crypt)";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -135,12 +135,13 @@
         $ausgaben["logout_rechte"] = "";
 
 
-        $funktionen = array("leveled","usered","menued","fileed","passed");
-        foreach( $funktionen as $funktion ) {
-            $array = explode(";", $cfg["right"][$funktion][0]);
+        #$funktionen = array("leveled","usered","menued","fileed","passed");
+        #foreach( $funktionen as $funktion ) {
+        foreach( $cfg["menu"] as $funktion => $werte) {
+            $array = explode(";", $werte[1]);
             foreach( $array as $value) {
                 if ( $rechte[$value] == -1 || $value == "" ) {
-                    $ausgaben["logout_rechte"] .= "<a href=\"".$pathvars["virtual"]."/admin/".$funktion."/".$cfg["right"][$funktion][1].".html\">#(".$funktion.")</a><br>";
+                    $ausgaben["logout_rechte"] .= "<a href=\"".$pathvars["virtual"]."/admin/".$funktion."/".$werte[0].".html\">#(".$funktion.")</a><br>";
                     break;
                 }
             }
