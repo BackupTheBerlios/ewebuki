@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script["name"] = "$Id: fileed-ctrl.inc.php,v 1.4 2004/11/08 22:33:03 chaot Exp $";
+  $script["name"] = "$Id: fileed-ctrl.inc.php,v 1.5 2004/11/09 01:14:38 chaot Exp $";
   $Script["desc"] = "datei manager ctrl";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -61,6 +61,10 @@
     // NUR BIS ZUM UMBAU HIER!!! unzugaengliche #(marken) sichtbar machen
     if ( isset($HTTP_GET_VARS["edit"]) ) {
         $ausgaben["inaccessible"] = "inaccessible values:<br />";
+        $ausgaben["inaccessible"] .= "# (send_image) #(send_image)<br />";
+        $ausgaben["inaccessible"] .= "# (describe) #(describe)<br />";
+        $ausgaben["inaccessible"] .= "# (delete1) #(delete1)<br />";
+        $ausgaben["inaccessible"] .= "# (delete2) #(delete2)<br />";
         #$ausgaben["inaccessible"] .= "# (error_?) #(error_?)<br />";
     } else {
         $ausgaben["inaccessible"] = "";
