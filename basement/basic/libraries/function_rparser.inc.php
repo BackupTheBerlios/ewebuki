@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script_name = "$Id: function_rparser.inc.php,v 1.2 2003/11/13 15:44:44 chaot Exp $";
+  $script_name = "$Id: function_rparser.inc.php,v 1.3 2003/11/18 08:25:58 chaot Exp $";
   $Script_desc = "recursiver template parser";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -189,7 +189,8 @@
                             }
                             $tetstring = str_replace($cutstring,"",$environment["ebene"]);
                             if ( $tetstring != "" ) {
-                                $startfile = crc32($tetstring).".".$token_name.".tem.html";
+                                #$prefix = "e";
+                                $startfile = $prefix.crc32($tetstring).".".$token_name.".tem.html";
                                 if ( !file_exists($pathvars["templates"].$startfile) ) {
                                   if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= "no ".$startfile." crc32 template found for ebene (".$tetstring.")".$debugging["char"];
                                 } else {
