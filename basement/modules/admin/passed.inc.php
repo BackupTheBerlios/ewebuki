@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script["name"] = "$Id: passed.inc.php,v 1.3 2003/11/13 15:09:40 chaot Exp $";
+  $script["name"] = "$Id: passed.inc.php,v 1.4 2003/12/17 07:57:59 chaot Exp $";
   $Script["desc"] = "user password change";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -119,7 +119,7 @@
             }
 
             // ohne fehler sql bauen und ausfuehren
-            if ( $ausgaben["form_error"] == "" && ( $HTTP_POST_VARS["submit"] != "" || $HTTP_POST_VARS["image"] != "" ) ){
+            if ( $ausgaben["form_error"] == "" && ( $HTTP_POST_VARS["submit"] || $HTTP_POST_VARS["image"] != "" ) ){
                 $kick = array( "PHPSESSID", "ablogin", "oldpass", "newpass", "chkpass", "submit", "submit_x", "submit_y", "form_referer" );
 
                 foreach($form_values as $name => $value) {

@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: fileed-describe.inc.php,v 1.6 2003/11/15 10:02:30 chaot Exp $";
+// "$Id: fileed-describe.inc.php,v 1.7 2003/12/17 07:57:59 chaot Exp $";
 // "short description";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -122,8 +122,12 @@
 
             // form eingaben prüfen
             form_errors( $form_options, $form_values );
-
-            if ( $ausgaben["form_error"] == "" && ( $HTTP_POST_VARS["submit"] != "" || $HTTP_POST_VARS[image] != "" ) ) {
+                if ( $HTTP_SESSION_VARS["uid"]  == 726 ||  $HTTP_SESSION_VARS["uid"]  == 94) {
+                    #echo "<pre>";
+                    #print_r($HTTP_POST_VARS);
+                    #echo "</pre>";
+                }
+            if ( $ausgaben["form_error"] == "" && ( $HTTP_POST_VARS["submit"] != "" || $HTTP_POST_VARS["image"] ) ) {
                 $kick = array( "PHPSESSID", "submit", "image", "image_x", "image_y", "form_referer", "bnet", "cnet" );
                     foreach($form_values as $name => $value) {
                     if ( !in_array($name,$kick) ) {
@@ -146,6 +150,7 @@
                 #$ldate = substr($ldate,6,4)."-".substr($ldate,3,2)."-".substr($ldate,0,2)." ".substr($ldate,11,9);
 
                 $sql = "insert into ".$cfg["db"]["entries"]." (".$sqla.") VALUES (".$sqlb.")";
+
                 $result  = $db -> query($sql);
                 if ( $result ) {
                     $file_id = $db->lastid();
