@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $script_name = "$Id: sitesearch.inc.php,v 1.2 2003/10/19 17:07:43 chaot Exp $";
+    $script_name = "$Id: sitesearch.inc.php,v 1.3 2004/10/12 00:18:49 chaot Exp $";
     $Script_desc = "fulltext db site search";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -56,7 +56,7 @@
           $result = $db -> query($sql);
           while ( $site_text = $db -> fetch_array($result,$nop) ) {
                #$path = str_replace(".","/",$site_text["tname"]);
-               $ausgaben["output"] .= "<a target=\"_blank\" href=\"/".$environment["design"]."/".$site_text["lang"].$site_text["ebene"]."/".$site_text["kategorie"].".html\">".$specialvars["pagetitle"]." - ".$site_text["kategorie"]."</a><br>";
+               $ausgaben["output"] .= "<a target=\"_top\" href=\"".$pathvars["virtual"].$site_text["ebene"]."/".$site_text["kategorie"].".html\">Seite: ".$site_text["ebene"]."/".$site_text["kategorie"].".html</a><br>";
                $site_text["content"] = tagremove($site_text["content"]);
 
 
