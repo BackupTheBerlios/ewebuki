@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: menued-edit.inc.php,v 1.2 2004/11/06 20:45:12 chaot Exp $";
+// "$Id: menued-edit.inc.php,v 1.3 2004/11/09 21:14:10 chaot Exp $";
 // "short description";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -207,7 +207,7 @@
             if ( $ausgaben["form_error"] == ""  ) {
 
                 $header_link = $cfg["basis"]."/edit,".$environment["parameter"][1].".html"; #?referer=".$ausgaben["form_referer"]);
-                if ( $HTTP_POST_VARS["add"] ) {
+                if ( $HTTP_POST_VARS["add"] && $HTTP_POST_VARS["new_lang"] != "" ) {
                     $sql = "SELECT label
                               FROM ".$cfg["db"]["lang"]["entries"]."
                              WHERE mid = ".$environment["parameter"][1]."
