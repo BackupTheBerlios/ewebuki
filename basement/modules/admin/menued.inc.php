@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script_name = "$Id: menued.inc.php,v 1.4 2003/11/13 15:35:26 chaot Exp $";
+  $script_name = "$Id: menued.inc.php,v 1.5 2003/12/12 14:34:51 chaot Exp $";
   $Script_desc = "Menu Management Applikation (alpha)";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -409,22 +409,21 @@
                             $ast = array(0);
                             $astpath = array($menuarray["entry"]);
                         }
+
                         // ast einruecken
                         if ( !in_array($refid, $ast, TRUE) ) {
                             $ast[] = $refid;
                             $astpath[] = $menuarray["entry"];
                             $tiefe = array_search($refid, $ast, TRUE);
+
                         // ast ausruecken bzw. auf dem aktuellen wert setzen
                         } else {
-                            // aktuellen wert loeschen
-                            array_pop($ast);
-                            array_pop($astpath);
-
-                            // evtl. ast ausruecken
-                            if ( array_search($refid, $ast, TRUE) >= 1 ) {
-                              array_pop($ast);
-                              array_pop($astpath);
+                            $key = array_search($refid, $ast, TRUE);
+                            while ( array_key_exists( $key, $ast ) ) {
+                                array_pop($ast);
+                                array_pop($astpath);
                             }
+
                             // aktuellen wert setzen
                             $ast[] = $refid;
                             $astpath[] = $menuarray["entry"];
