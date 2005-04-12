@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_content.inc.php,v 1.14 2005/04/03 11:48:16 chaot Exp $";
+// "$Id: function_content.inc.php,v 1.15 2005/04/12 21:45:44 chaot Exp $";
 // "content sprachabhaengig holen";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -82,6 +82,8 @@
             $labellen = $labelend-$labelbeg;
             // token name extrahieren
             $label = substr($line,$labelbeg+2,$labellen-2);
+
+            if ( strpos($label,",") !== false ) break; // javascript fix
 
             $sql = "SELECT html, content FROM ". SITETEXT ." WHERE tname='".$dbtname."' AND lang='".$environment["language"]."' AND label='$label'";
             #if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= "sql: ".$sql.$debugging["char"];
