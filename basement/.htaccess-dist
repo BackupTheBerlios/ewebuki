@@ -1,5 +1,5 @@
 # don't forget to load mod_rewrite in apache-config!
-# $Id: .htaccess-dist,v 1.2 2004/09/22 02:52:13 chaot Exp $
+# $Id: .htaccess-dist,v 1.3 2005/05/23 19:46:31 chaot Exp $
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
@@ -14,8 +14,11 @@
   RewriteRule ^templates.* - [L] 			
   
   RewriteRule ^robots.txt - [L] 			
-  RewriteRule index.php - [L]
 
-  # der rest wird umgeleitet
+  # entweder aufruf über index.php
+  #RewriteRule ^index.php - [L]
+  #RewriteRule ^.+ basic/main.php [T=application/x-httpd-php]
+
+  # oder betrieb ohne index.php
   RewriteRule ^.* basic/main.php [T=application/x-httpd-php]
 </IfModule>
