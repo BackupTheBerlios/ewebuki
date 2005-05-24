@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: magic.php,v 1.1 2003/10/06 19:12:22 chaot Exp $";
+// "$Id: magic.php,v 1.2 2005/05/24 23:36:01 chaot Exp $";
 // "image resize on demand";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -83,10 +83,9 @@
         if ($dest_height == '') $dest_height  = $src_height;
         if ($dest_width == '') $dest_width  = $src_width;
 
-        // leeres image erstellen
-        $img_dst = @imagecreatetruecolor($dest_width,$dest_height);
-        if ( $img_dst ) {
-            // groesse aendern
+        if ( function_exists(imagecreatetruecolor) ) {
+            // leeres image erstellen und groesse aendern
+            $img_dst = @imagecreatetruecolor($dest_width,$dest_height);
             imagecopyresampled($img_dst, $img_src, 0, 0, 0, 0, $dest_width, $dest_height, $src_width, $src_height);
         } else {
             // gd < 2.0 fallback
