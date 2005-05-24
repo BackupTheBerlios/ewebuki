@@ -1,10 +1,10 @@
 # don't forget to load mod_rewrite in apache-config!
-# $Id: .htaccess-dist,v 1.3 2005/05/23 19:46:31 chaot Exp $
+# $Id: .htaccess-dist,v 1.4 2005/05/24 10:26:11 chaot Exp $
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
 
-  # verzeichnisse und datien die nicht rewrited werden
+  # unbedingt benötigte ausnahmen
   RewriteRule ^basic.* - [L] 			
   RewriteRule ^conf.* - [L] 			
   RewriteRule ^css.* - [L] 			
@@ -14,6 +14,9 @@
   RewriteRule ^templates.* - [L] 			
   
   RewriteRule ^robots.txt - [L] 			
+  
+  # zusaetzliche eigene ausnahmen
+  #RewriteRule ^my.* - [L] 			
 
   # entweder aufruf über index.php
   #RewriteRule ^index.php - [L]
