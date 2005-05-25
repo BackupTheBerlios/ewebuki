@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: menued.cfg.php-dist,v 1.9 2005/05/25 10:59:10 chaot Exp $";
+// "$Id: menued.cfg.php-dist,v 1.10 2005/05/25 11:15:29 chaot Exp $";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
     eWeBuKi - a easy website building kit
@@ -78,7 +78,6 @@
                      "text" => array(
                           "entries" => "site_text",
                                ),
-                       ),
                      "user" => array(
                           "entries" => "auth_user",
                               "key" => "uid",
@@ -101,6 +100,7 @@
                          "dbasekey" => "sdb",
                          "tnamekey" => "stname"
                                ),
+                       ),
             "fqdn0" => "www",
             "right" => "cms_admin",
     );
