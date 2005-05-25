@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_content.inc.php,v 1.17 2005/05/25 10:12:06 chaot Exp $";
+// "$Id: function_content.inc.php,v 1.18 2005/05/25 15:20:00 chaot Exp $";
 // "content sprachabhaengig holen";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -112,7 +112,7 @@
                     $dbzugriff = -1;
                     $katzugriff = -1;
                 // sperre fuer bestimmte templates
-                } elseif ( in_array($tname,$specialvars["security"]["nochk"]) ) {
+                } elseif ( in_array($tname,(array)$specialvars["security"]["nochk"]) ) {
                     $katzugriff = FALSE;
                     $dbzugriff = FALSE;
                 // hier erfolgt der check wenn man kein admin ist und bei nicht gesperrten templates
@@ -131,7 +131,7 @@
                 if ( $rechte[$specialvars["security"]["overwrite"]] == -1 ) {
                     $katzugriff = -1;
                 // sperre fuer bestimmte templates
-                } elseif ( in_array($tname,$specialvars["security"]["nochk"]) ) {
+                } elseif ( in_array($tname,(array)$specialvars["security"]["nochk"]) ) {
                     $katzugriff = FALSE;
                 // hier erfolgt der check wenn man kein admin ist und bei nicht gesperrten templates
                 } else {
