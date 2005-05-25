@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: menued-list.inc.php,v 1.1 2004/11/04 22:06:16 chaot Exp $";
+// "$Id: menued-list.inc.php,v 1.2 2005/05/25 10:19:35 chaot Exp $";
 // "menued - liste";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -53,6 +53,12 @@
             "down"      => array("sort,", "#(button_desc_down)", $cfg["right"]),
             "move"      => array("", "#(button_desc_move)", $cfg["right"]),
         );
+
+        // bei eingeschalteten content recht wird button hinzugefuegt
+        if ( $specialvars["security"]["enable"] == -1 ) {
+            $modify["rights"] = array("", "#(button_desc_right)", $cfg["right"]);
+        }
+
         $ausgaben["output"] .= sitemap(0, "menued", $modify);
 
         // fehlermeldungen
