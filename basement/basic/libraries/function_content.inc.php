@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_content.inc.php,v 1.15 2005/04/12 21:45:44 chaot Exp $";
+// "$Id: function_content.inc.php,v 1.16 2005/05/25 09:43:40 chaot Exp $";
 // "content sprachabhaengig holen";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -127,42 +127,42 @@
 
             // cms edit link einblenden
             if ( $specialvars["editlock"] == False ) {
-            if ( $rechte["cms_edit"] == -1
-              /* || $rechte["administration"] == -1 && $rechte["sti"] == -1 ### loesung? */
-              || $rechte["administration"] == -1 && $dbzugriff == -1
-              || $katzugriff == -1 ) {
+                if ( $rechte["cms_edit"] == -1
+                /* || $rechte["administration"] == -1 && $rechte["sti"] == -1 ### loesung? */
+                || $rechte["administration"] == -1 && $dbzugriff == -1
+                || $katzugriff == -1 ) {
 
-                // konvertieren ?
-                if ( $specialvars["wysiwyg"] == "" && $row[0] == -1 ) {
-                    $convert = ",,tag";
-                    $signal = "c";
-                } elseif ( $specialvars["wysiwyg"] != "" && $row[0] != -1 ) {
-                    $convert = ",,html";
-                    $signal = "c";
-                } else {
-                    $convert = "";
-                    $signal = "e";
-                }
-                $editurl = $pathvars["virtual"]."/cms/edit,".$db->getDb().",".$dbtname.",".$label;
+                    // konvertieren ?
+                    if ( $specialvars["wysiwyg"] == "" && $row[0] == -1 ) {
+                        $convert = ",,tag";
+                        $signal = "c";
+                    } elseif ( $specialvars["wysiwyg"] != "" && $row[0] != -1 ) {
+                        $convert = ",,html";
+                        $signal = "c";
+                    } else {
+                        $convert = "";
+                        $signal = "e";
+                    }
+                    $editurl = $pathvars["virtual"]."/cms/edit,".$db->getDb().",".$dbtname.",".$label;
 
-                if ( $defaults["cms-tag"]["signal"] == "" ) {
-                    $defaults["cms-tag"]["signal"] = "<img src=\"/images/default/cms-tag-";
-                    $defaults["cms-tag"]["/signal"] = ".png\" width=\"4\" height=\"4\" border=\"0\" alt=\"Bearbeiten\" />";
-                }
+                    if ( $defaults["cms-tag"]["signal"] == "" ) {
+                        $defaults["cms-tag"]["signal"] = "<img src=\"/images/default/cms-tag-";
+                        $defaults["cms-tag"]["/signal"] = ".png\" width=\"4\" height=\"4\" border=\"0\" alt=\"Bearbeiten\" />";
+                    }
 
-                // wenn es kein value, alt, title und status in der zeile gibt
-                $vorher = substr($line,$labelbeg-20,20);
-                if ( !strpos($vorher,"value=\"")
-                  && !strpos($vorher,"alt=\"")
-                  && !strpos($vorher,"title=\"")
-                  && !strpos($vorher,"status='") ) {
-                    $replace .= " <a target=\"_top\" href=\"".$editurl.$convert.".html\">".$defaults["cms-tag"]["signal"].$signal.$defaults["cms-tag"]["/signal"]."</a>";
-                } else {
-                    #$line = $line."# (".$label.")&nbsp;<a target=\"_top\" href=\"".$editurl.$convert.".html\">".$defaults["cms-tag"]["signal"].$signal.$defaults["cms-tag"]["/signal"]."</a><br />\n";
-                    #$ausgaben["inaccessible"] .= "# (".$label.")&nbsp;#(".$label.")<a target=\"_top\" href=\"".$editurl.$convert.".html\">".$defaults["cms-tag"]["signal"].$signal.$defaults["cms-tag"]["/signal"]."</a><br />\n";
-                    $ausgaben["inaccessible"] .= $bez.$label.")&nbsp;".$art.$label.")<br />\n";
+                    // wenn es kein value, alt, title und status in der zeile gibt
+                    $vorher = substr($line,$labelbeg-20,20);
+                    if ( !strpos($vorher,"value=\"")
+                      && !strpos($vorher,"alt=\"")
+                      && !strpos($vorher,"title=\"")
+                      && !strpos($vorher,"status='") ) {
+                        $replace .= " <a target=\"_top\" href=\"".$editurl.$convert.".html\">".$defaults["cms-tag"]["signal"].$signal.$defaults["cms-tag"]["/signal"]."</a>";
+                    } else {
+                        #$line = $line."# (".$label.")&nbsp;<a target=\"_top\" href=\"".$editurl.$convert.".html\">".$defaults["cms-tag"]["signal"].$signal.$defaults["cms-tag"]["/signal"]."</a><br />\n";
+                        #$ausgaben["inaccessible"] .= "# (".$label.")&nbsp;#(".$label.")<a target=\"_top\" href=\"".$editurl.$convert.".html\">".$defaults["cms-tag"]["signal"].$signal.$defaults["cms-tag"]["/signal"]."</a><br />\n";
+                        $ausgaben["inaccessible"] .= $bez.$label.")&nbsp;".$art.$label.")<br />\n";
+                    }
                 }
-            }
             }
 
             // wenn content nicht in html ist
