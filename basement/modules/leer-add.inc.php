@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: leer-add.inc.php,v 1.1 2005/03/25 19:37:28 chaot Exp $";
+// "$Id: leer-add.inc.php,v 1.2 2005/05/27 18:21:57 chaot Exp $";
 // "leer - add funktion";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -90,7 +90,7 @@
         $ausgaben["form_hidden"] .= "";
 
         // was anzeigen
-        #$mapping["main"] = crc32($environment["ebene"]).".edit"
+        $mapping["main"] = crc32($environment["ebene"]).".modify";
         #$mapping["navi"] = "leer";
 
         // unzugaengliche #(marken) sichtbar machen
@@ -146,7 +146,7 @@
                 #$sqla .= ", pass";
                 #$sqlb .= ", password('".$checked_password."')";
 
-                $sql = "insert into ".$cfg["db"]["level"]["entries"]." (".$sqla.") VALUES (".$sqlb.")";
+                $sql = "insert into ".$cfg["db"]["leer"]["entries"]." (".$sqla.") VALUES (".$sqlb.")";
                 if ( $debugging["sql_enable"] ) $debugging["ausgabe"] .= "sql: ".$sql.$debugging["char"];
                 $result  = $db -> query($sql);
                 if ( !$result ) $ausgaben["form_error"] .= $db -> error("#(error_result)<br />");

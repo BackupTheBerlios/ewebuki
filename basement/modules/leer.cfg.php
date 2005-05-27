@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: leer.cfg.php,v 1.2 2005/03/25 19:38:41 chaot Exp $";
+// "$Id: leer.cfg.php,v 1.3 2005/05/27 18:21:57 chaot Exp $";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
     eWeBuKi - a easy website building kit
@@ -43,9 +43,9 @@
 ////+///////+///////+///////+///////+///////+///////+///////////////////////////////////////////////////////////
 
     $cfg = array(
-           "subdir" => "ordner",
+           "subdir" => "customer",
              "name" => "leer",
-            "basis" => $pathvars["virtual"]."/bereich/leer",
+            "basis" => $pathvars["virtual"]."/dir/my",
          "iconpath" => "", # leer: /images/default/; automatik: $pathvars["images"]
          "function" => array(
                       "add" => "",
@@ -57,6 +57,7 @@
                           "entries" => "db_leer",
                               "key" => "id",
                             "order" => "sort, label",
+                            "rows"  => 4,
                      ),
               ),
             "right" => "",
