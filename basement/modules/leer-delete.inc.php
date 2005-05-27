@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: leer-delete.inc.php,v 1.2 2005/05/27 18:21:57 chaot Exp $";
+// "$Id: leer-delete.inc.php,v 1.3 2005/05/27 20:32:44 chaot Exp $";
 // "leer - delete funktion";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -122,6 +122,7 @@
 
             // was anzeigen
             #$mapping["main"] = crc32($environment["ebene"]).".delete";
+            #if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= "<font color=\"#FF0000\">ATTENTION: template overwrite -> ".$mapping["main"].".tem.html</font>".$debugging["char"];
             #$mapping["navi"] = "leer";
 
             // unzugaengliche #(marken) sichtbar machen
