@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: leer.cfg.php,v 1.3 2005/05/27 18:21:57 chaot Exp $";
+// "$Id: leer.cfg.php,v 1.4 2005/05/27 18:56:45 chaot Exp $";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
     eWeBuKi - a easy website building kit
@@ -45,7 +45,7 @@
     $cfg = array(
            "subdir" => "customer",
              "name" => "leer",
-            "basis" => $pathvars["virtual"]."/dir/my",
+            "basis" => $pathvars["virtual"]."/dir/my", # crc = -1468826685 *
          "iconpath" => "", # leer: /images/default/; automatik: $pathvars["images"]
          "function" => array(
                       "add" => "",
@@ -62,6 +62,10 @@
               ),
             "right" => "",
     );
+
+    // * tipp: fuer das einfache modul muss der wert $cfg["basis"] natuerlich
+    // "/my" lauten. es funktioniert im beispiel nur ohne aenderung, da das
+    // einfache script $cfg["basis] nicht nutzt.
 
 ////+///////+///////+///////+///////+///////+///////+///////////////////////////////////////////////////////////
 ?>
