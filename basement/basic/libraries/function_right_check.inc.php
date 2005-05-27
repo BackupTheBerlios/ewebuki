@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script["name"] = "$Id: function_right_check.inc.php,v 1.1 2003/11/13 12:21:30 chaot Exp $";
+  $script["name"] = "$Id: function_right_check.inc.php,v 1.2 2005/05/27 09:44:44 chaot Exp $";
   $Script["desc"] = "rechte in bereichen pruefen";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -47,8 +47,9 @@
     // $art = 0 - artikel
     // $art = 1 - content
 
-    function right_check($art, $ebene, $kategorie="") {
-        global $HTTP_SESSION_VARS,$database,$db;
+    function right_check($art, $ebene, $kategorie="",$database=DATABASE) {
+        global $HTTP_SESSION_VARS,$db;
+        
         $url = explode("/", $ebene."/".$kategorie);
         foreach ($url as $key => $value) {
             if ( $key > 0 ) $trenner = "/";
