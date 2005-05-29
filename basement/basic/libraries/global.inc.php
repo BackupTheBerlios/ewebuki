@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: global.inc.php,v 1.8 2005/05/29 18:24:59 chaot Exp $";
+    $main_script_name = "$Id: global.inc.php,v 1.9 2005/05/29 18:38:16 chaot Exp $";
     $main_script_desc = "main include file";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -48,6 +48,9 @@
     $pathvars["webimages"] = "/images/main"."/";                        # gilt nur fuer select seite
     $pathvars["webcss"]    = "/css"."/";                                # gilt nur fuer select seite
 
+    // site config
+    require "../conf/site.cfg.php";
+
     // berlios fix
     if ( $pathvars["fileroot"] == "" ) {
         $pathvars["fileroot"] = rtrim($_SERVER["DOCUMENT_ROOT"],"/")."/";
@@ -61,8 +64,6 @@
 
     $pathvars["templates"]  = $pathvars["fileroot"]."templates/main"."/";  # gilt nur fuer select seite
 
-    // site config
-    require $pathvars["config"]."site.cfg.php";
 
     // automatic db access
     foreach ( $access as $name => $value ) {
