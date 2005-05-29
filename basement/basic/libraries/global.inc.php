@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: global.inc.php,v 1.5 2004/10/14 21:39:22 chaot Exp $";
+    $main_script_name = "$Id: global.inc.php,v 1.6 2005/05/29 17:24:08 chaot Exp $";
     $main_script_desc = "main include file";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -47,9 +47,9 @@
     $pathvars["webroot"]   = "http://".$_SERVER["HTTP_HOST"];
     $pathvars["webimages"] = "/images/main"."/";                        # gilt nur fuer select seite
     $pathvars["webcss"]    = "/css"."/";                                # gilt nur fuer select seite
-    
+
     $pathvars["fileroot"] = rtrim($_SERVER["DOCUMENT_ROOT"],"/")."/";
-        
+
     $pathvars["basicroot"]  = $pathvars["fileroot"]."basic/";
     $pathvars["addonroot"]  = $pathvars["fileroot"]."modules/";
 
@@ -60,6 +60,17 @@
 
     // site config
     require $pathvars["config"]."site.cfg.php";
+
+    // automatic db access
+    foreach ( $access as $name => $value ) {
+        if ( strpos($_SERVER["SERVER_NAME"],$value["server"]) !== false ) {
+            define ('DB_HOST', $access[$name]["host"]);
+            define ('DATABASE', $access[$name]["db"]);
+            define ('DB_USER', $access[$name]["user"]);
+            define ('DB_PASSWORD', $access[$name]["pass"]);
+            break;
+        }
+    }
 
     // debug array init
     $debugging["ausgabe"] = "";
