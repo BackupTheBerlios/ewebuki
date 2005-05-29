@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: global.inc.php,v 1.7 2005/05/29 18:01:38 chaot Exp $";
+    $main_script_name = "$Id: global.inc.php,v 1.8 2005/05/29 18:24:59 chaot Exp $";
     $main_script_desc = "main include file";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -43,9 +43,6 @@
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    // site config
-    require $pathvars["config"]."site.cfg.php";
-
     // path config
     $pathvars["webroot"]   = "http://".$_SERVER["HTTP_HOST"];
     $pathvars["webimages"] = "/images/main"."/";                        # gilt nur fuer select seite
@@ -63,6 +60,9 @@
     $pathvars["config"]     = $pathvars["fileroot"]."conf"."/";
 
     $pathvars["templates"]  = $pathvars["fileroot"]."templates/main"."/";  # gilt nur fuer select seite
+
+    // site config
+    require $pathvars["config"]."site.cfg.php";
 
     // automatic db access
     foreach ( $access as $name => $value ) {
