@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: leer-list.inc.php,v 1.3 2005/05/27 20:32:44 chaot Exp $";
+// "$Id: leer-list.inc.php,v 1.4 2005/05/31 10:49:29 chaot Exp $";
 // "leer - list funktion";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -110,7 +110,6 @@
         // was anzeigen
         $cfg["path"] = str_replace($pathvars["virtual"],"",$cfg["basis"]);
         $mapping["main"] = crc32($cfg["path"]).".list";
-        if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= "<font color=\"#FF0000\">ATTENTION: template overwrite -> ".$mapping["main"].".tem.html</font>".$debugging["char"];
         #$mapping["navi"] = "leer";
 
         // unzugaengliche #(marken) sichtbar machen
