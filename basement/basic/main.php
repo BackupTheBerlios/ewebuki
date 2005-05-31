@@ -1,6 +1,6 @@
 <?php $t_start = array_sum(explode(' ', microtime())); require "libraries/global.inc.php";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: main.php,v 1.16 2004/12/11 23:14:32 chaot Exp $";
+    $main_script_name = "$Id: main.php,v 1.17 2005/05/31 10:47:58 chaot Exp $";
     $main_script_desc = "haupt script";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -317,6 +317,15 @@
     } elseif ( file_exists($pathvars["fileroot"]."templates/default/linking.inc.php") ) {
       $linking_path = $pathvars["fileroot"]."templates/default/";
       include $linking_path."linking.inc.php";
+    }
+
+    // template overwrite?
+    if ( $debugging["html_enable"] ) {
+        $main_auto = $environment["template"];
+        $main_new = str_replace(".".crc32($environment["ebene"]),"",crc32($environment["ebene"]).".".$mapping["main"].".tem.html");
+        if ( $main_auto != $main_new ) {
+            $debugging["ausgabe"] .= "<B>ATTENTION: template overwrite -> ".$mapping["main"].".tem.html</B>".$debugging["char"];
+        }
     }
 
     // rekursiven parser aufrufen
