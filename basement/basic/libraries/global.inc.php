@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: global.inc.php,v 1.10 2005/05/31 13:05:24 chaot Exp $";
+    $main_script_name = "$Id: global.inc.php,v 1.11 2005/05/31 15:53:39 chaot Exp $";
     $main_script_desc = "main include file";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -64,6 +64,8 @@
 
     $pathvars["templates"]  = $pathvars["fileroot"]."templates/main"."/";  # gilt nur fuer select seite
 
+    // file config
+    require $pathvars["config"]."file.cfg.php";
 
     // automatic db access
     foreach ( (array)$access as $name => $value ) {
