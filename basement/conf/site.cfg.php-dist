@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: site.cfg.php-dist,v 1.16 2005/05/29 18:24:33 chaot Exp $";
+// "$Id: site.cfg.php-dist,v 1.17 2005/05/31 15:46:26 chaot Exp $";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
     eWeBuKi - a easy website building kit
@@ -93,19 +93,6 @@
     // DOCUMENT_ROOT wird dabei nicht auf das Directory des jeweiligen Projektes gesetzt
     // eWeBuKi findet normalerweise anhand dieser Variable die Basis und scheitert.
     // berliOS Fix **********
-
-    // datei variablen
-    $pathvars["filebase"]["maindir"] = $pathvars["fileroot"]."file/"; // pfad der dateien im filesystem
-    $pathvars["filebase"]["webdir"] = "/file/"; // pfad der dateien auf dem webserver
-    $pathvars["filebase"]["new"] = "new/";
-    $pathvars["filebase"]["pic"]["root"] = "picture/";
-    $pathvars["filebase"]["pic"]["tn"] = "thumbnail/";
-    $pathvars["filebase"]["pic"]["o"] = "original/";
-    $pathvars["filebase"]["pic"]["s"] = "small/";
-    $pathvars["filebase"]["pic"]["m"] = "medium/";
-    $pathvars["filebase"]["pic"]["b"] = "big/";
-    $pathvars["filebase"]["doc"] = "document/";
-    $pathvars["filebase"]["arc"] = "archiv/";
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ?>
