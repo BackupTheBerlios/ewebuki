@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: global.inc.php,v 1.9 2005/05/29 18:38:16 chaot Exp $";
+    $main_script_name = "$Id: global.inc.php,v 1.10 2005/05/31 13:05:24 chaot Exp $";
     $main_script_desc = "main include file";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -66,7 +66,7 @@
 
 
     // automatic db access
-    foreach ( $access as $name => $value ) {
+    foreach ( (array)$access as $name => $value ) {
         if ( strpos($_SERVER["SERVER_NAME"],$value["server"]) !== false ) {
             define ('DB_HOST', $access[$name]["host"]);
             define ('DATABASE', $access[$name]["db"]);
