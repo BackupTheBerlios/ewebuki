@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script["name"] = "$Id: leer.inc.php,v 1.3 2005/05/27 18:56:46 chaot Exp $";
+  $script["name"] = "$Id: leer.inc.php,v 1.4 2005/06/03 19:27:20 chaot Exp $";
   $Script["desc"] = "short description";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -105,7 +105,7 @@
         }
 
         // navigation erstellen
-        $ausgaben[""] = $cfg["basis"]."/add,".$environment["parameter"][1].",verify.html";
+        $ausgaben["add"] = $cfg["basis"]."/add,".$environment["parameter"][1].",verify.html";
         #$mapping["navi"] = "leer";
 
         // hidden values
