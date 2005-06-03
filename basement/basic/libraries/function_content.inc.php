@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_content.inc.php,v 1.19 2005/05/27 09:44:44 chaot Exp $";
+// "$Id: function_content.inc.php,v 1.20 2005/06/03 12:34:32 chaot Exp $";
 // "content sprachabhaengig holen";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -117,7 +117,7 @@
                     $dbzugriff = FALSE;
                 // hier erfolgt der check wenn man kein admin ist und bei nicht gesperrten templates
                 } else {
-                    if (right_check("-1",$environment["ebene"],$environment["kategorie"]) != "") {
+                    if (right_check("-1",$environment["ebene"],$environment["kategorie"],$database) != "") {
                         $dbzugriff = -1;
                         $katzugriff = -1;
                     } else {
