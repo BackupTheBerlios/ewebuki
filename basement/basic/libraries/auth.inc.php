@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $script_name = "$Id: auth.inc.php,v 1.11 2005/09/13 09:42:33 chaot Exp $";
+    $script_name = "$Id: auth.inc.php,v 1.12 2005/09/13 10:55:04 chaot Exp $";
     $Script_desc = "authentifikation modul (mysql encrypt/ php crypt)";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -62,7 +62,7 @@
 
     // login ueberpruefen
     if ( $HTTP_POST_VARS["login"] == "login" ) {
-        if ( $cfg["db"]["user"]["custom"] != "" ) $custom = ", ".$cfg["db"]["user"]["custom"].",";
+        if ( $cfg["db"]["user"]["custom"] != "" ) $custom = ", ".$cfg["db"]["user"]["custom"];
         $sql = "SELECT ".$cfg["db"]["user"]["id"].",
                        ".$cfg["db"]["user"]["surname"].",
                        ".$cfg["db"]["user"]["forename"].",
