@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: auth.cfg.php-dist,v 1.5 2005/05/25 10:34:05 chaot Exp $";
+// "$Id: auth.cfg.php-dist,v 1.6 2005/09/13 09:46:57 chaot Exp $";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
     eWeBuKi - a easy website building kit
@@ -54,7 +54,10 @@
                     "user" => array(
                           "entries" => "auth_user",
                                "id" => "uid",
-                             "name" => "username",
+                            "alias" => "username",
+                         "forename" => "vorname",
+                          "surname" => "nachname",
+                            "email" => "email",
                              "pass" => "pass",
                            "custom" => ""
                               ),
