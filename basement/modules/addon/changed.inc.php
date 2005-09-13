@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script["name"] = "$Id: changed.inc.php,v 1.1 2005/09/13 09:58:36 chaot Exp $";
+  $script["name"] = "$Id: changed.inc.php,v 1.2 2005/09/13 11:19:01 chaot Exp $";
   $Script["desc"] = "zeigt last changed info aus content tabelle an";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -61,7 +61,7 @@
                        ".$cfg["db"]["changed"]["changed"].",
                        ".$cfg["db"]["changed"]["surname"].",
                        ".$cfg["db"]["changed"]["forename"].",
-                       ".$cfg["db"]["changed"]["email"]."
+                       ".$cfg["db"]["changed"]["email"].",
                        ".$cfg["db"]["changed"]["alias"]."
                   FROM ".$cfg["db"]["changed"]["entries"]."
                  WHERE tname = '".$tname."'
