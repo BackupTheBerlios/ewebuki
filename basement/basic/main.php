@@ -1,6 +1,6 @@
 <?php $t_start = array_sum(explode(' ', microtime())); require "libraries/global.inc.php";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: main.php,v 1.17 2005/05/31 10:47:58 chaot Exp $";
+    $main_script_name = "$Id: main.php,v 1.18 2005/09/15 12:47:29 chaot Exp $";
     $main_script_desc = "haupt script";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -233,7 +233,7 @@
 
     // grundmapping main output
     if ( $specialvars["crc32"] == -1 ) {
-        if ( $environment["kategorie"] != "" && $environment["kategorie"] != "index" ) {
+        if ( $environment["kategorie"] != "" ) {
              $mapping["main"] = $environment["kategorie"];
         }
     } else {
@@ -351,7 +351,7 @@
         $ausgaben["seite"] = $array[0];
         rparser("frameset.head.tem.html", $specialvars["default_template"].".tem.html");
     } else {
-        rparser("index.tem.html", $specialvars["default_template"].".tem.html");
+        rparser("base.tem.html", $specialvars["default_template"].".tem.html");
     }
 
     $exec_time = array_sum(explode(' ', microtime())) - $t_start;
