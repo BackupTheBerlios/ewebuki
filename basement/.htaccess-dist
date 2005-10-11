@@ -1,8 +1,8 @@
 # don't forget to load mod_rewrite in apache-config!
-# $Id: .htaccess-dist,v 1.4 2005/05/24 10:26:11 chaot Exp $
+# $Id: .htaccess-dist,v 1.5 2005/10/11 08:35:35 chaot Exp $
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteBase /
+  #RewriteBase /
 
   # unbedingt benötigte ausnahmen
   RewriteRule ^basic.* - [L] 			
@@ -23,5 +23,5 @@
   #RewriteRule ^.+ basic/main.php [T=application/x-httpd-php]
 
   # oder betrieb ohne index.php
-  RewriteRule ^.* basic/main.php [T=application/x-httpd-php]
+  RewriteRule ^.* ./basic/main.php [T=application/x-httpd-php]
 </IfModule>
