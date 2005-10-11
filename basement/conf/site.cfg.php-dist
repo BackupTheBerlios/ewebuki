@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: site.cfg.php-dist,v 1.17 2005/05/31 15:46:26 chaot Exp $";
+// "$Id: site.cfg.php-dist,v 1.18 2005/10/11 08:25:40 chaot Exp $";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
     eWeBuKi - a easy website building kit
@@ -62,6 +62,7 @@
     // content variablen
     $specialvars["pagetitle"] = "eWeBuKi"; // globaler html seiten titel
     $specialvars["rootname"] = "Home"; // globaler root keks titel
+    $specialvars["subdir"] = "ewebuki"; // evtl. unterverzeichnis in dem ewebuki laeuft
     define ('SITETEXT','site_text'); // tabelle mit content
     $specialvars["available_languages"] = array("de","en"); // verfuegbare sprachen
     #$specialvars["convert_languages"] = array("ger" => "de","eng" => "en"); // sprachen konverter (setzen nur nach umbau)

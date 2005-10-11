@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: global.inc.php,v 1.11 2005/05/31 15:53:39 chaot Exp $";
+    $main_script_name = "$Id: global.inc.php,v 1.12 2005/10/11 08:27:52 chaot Exp $";
     $main_script_desc = "main include file";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -54,6 +54,12 @@
     // berlios fix
     if ( $pathvars["fileroot"] == "" ) {
         $pathvars["fileroot"] = rtrim($_SERVER["DOCUMENT_ROOT"],"/")."/";
+    }
+
+    // subdir support
+    if ( $specialvars["subdir"] != "" ) {
+        $pathvars["subdir"] = trim($specialvars["subdir"],"/");
+        $pathvars["fileroot"] = $pathvars["fileroot"].$pathvars["subdir"]."/";
     }
 
     $pathvars["basicroot"]  = $pathvars["fileroot"]."basic/";

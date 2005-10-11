@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script_name = "$Id: function_rparser.inc.php,v 1.24 2005/03/24 23:53:50 chaot Exp $";
+  $script_name = "$Id: function_rparser.inc.php,v 1.25 2005/10/11 08:27:52 chaot Exp $";
   $Script_desc = "recursiver template parser";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -242,6 +242,14 @@
                 $tname = substr($startfile,0,strpos($startfile,".tem.html"));
                 $line = content($line, $tname);
               }
+
+      //////////////////////////////////////////////////////////////////////////////////////////////
+      // subdir support
+      //////////////////////////////////////////////////////////////////////////////////////////////
+      if ( $pathvars["subdir"] != "" ) {
+        $line = str_replace("/images/","/".$pathvars["subdir"]."/images/",$line);
+        $line = str_replace("/file/","/".$pathvars["subdir"]."/file/",$line);
+      }
 
       //////////////////////////////////////////////////////////////////////////////////////////////
       // automatic "#{marke}" - rekursives !!!, automatisches einparsen von sub templates
