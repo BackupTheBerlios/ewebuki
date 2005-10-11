@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $script_name = "$Id: auth.inc.php,v 1.13 2005/10/11 08:27:52 chaot Exp $";
+    $script_name = "$Id: auth.inc.php,v 1.14 2005/10/11 09:10:50 chaot Exp $";
     $Script_desc = "authentifikation modul (mysql encrypt/ php crypt)";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -126,10 +126,6 @@
                 $destination_src = $ausgaben["form_referer"];
             } else {
                 $destination_src = $pathvars["requested"];
-            }
-            // subdir support
-            if ( $pathvars["subdir"] != "" ) {
-                $destination_src = "/".$pathvars["subdir"].$destination_src;
             }
             if ( $pathvars["virtual"] != "" ) {
                 $destination = str_replace($pathvars["virtual"],$pathvars["virtual"]."/auth",$destination_src);
