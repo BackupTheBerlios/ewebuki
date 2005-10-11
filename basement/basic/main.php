@@ -1,6 +1,6 @@
 <?php $t_start = array_sum(explode(' ', microtime())); require "libraries/global.inc.php";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: main.php,v 1.19 2005/10/11 08:27:00 chaot Exp $";
+    $main_script_name = "$Id: main.php,v 1.20 2005/10/11 08:54:46 chaot Exp $";
     $main_script_desc = "haupt script";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -230,7 +230,6 @@
     $environment["subkatid"] = $environment["subparam"][0];
     if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= "strg (alt) subkatid: ".$environment["subkatid"].$debugging["char"];
 
-
     // die drei design abhaengigen variablen werden angepasst
     $pathvars["menuroot"]  = "http://".$_SERVER["HTTP_HOST"].$pathvars["virtual"];
     $pathvars["images"]    = "/images/".$environment["design"]."/";
@@ -240,6 +239,7 @@
     if ( $pathvars["subdir"] != "" ) {
         $pathvars["virtual"] = "/".$pathvars["subdir"].$pathvars["virtual"];
         $pathvars["requested"] = "/".$pathvars["subdir"].$pathvars["requested"];
+        $ausgaben["auth_url"] = "/".$pathvars["subdir"].$ausgaben["auth_url"];
     }
 
     // grundmapping main output
