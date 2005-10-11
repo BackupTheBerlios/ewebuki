@@ -5,7 +5,7 @@
 # (c) Stefan Krister
 #     stefan.krister (at) creative.chaos.de
 #
-# $Id: install.sh,v 1.3 2004/09/22 16:21:17 bastard Exp $
+# $Id: install.sh,v 1.4 2005/10/11 09:19:31 chaot Exp $
 #
 
 function ask()
@@ -159,9 +159,9 @@ echo "ersten Start ändern wir also genau diese Files ..."
 
 cd $webroot
 
-mv index.php.auto-dist index.php
+#mv index.php.auto-dist index.php
 mv .htaccess-dist .htaccess
-echo "RewriteRule ^html basic/main.php [T =application/x-httpd-php]" >> .htaccess
+#echo "RewriteRule ^html basic/main.php [T =application/x-httpd-php]" >> .htaccess
 
 cd conf
 for datei in *.php-dist
