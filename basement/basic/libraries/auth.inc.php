@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $script_name = "$Id: auth.inc.php,v 1.14 2005/10/11 09:10:50 chaot Exp $";
+    $script_name = "$Id: auth.inc.php,v 1.15 2005/10/12 08:57:18 chaot Exp $";
     $Script_desc = "authentifikation modul (mysql encrypt/ php crypt)";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -133,6 +133,7 @@
                 $destination = "/auth".$destination_src;
             }
             header("Location: ".$destination);
+            exit; // Sicherstellen, dass nicht trotz Umleitung der nachfolgende Code ausgeführt wird.
         } else {
             session_start();
             session_unset();
