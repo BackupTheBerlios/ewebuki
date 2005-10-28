@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_file_verarbeitung.inc.php,v 1.5 2004/09/20 08:02:53 chaot Exp $";
+// "$Id: function_file_verarbeitung.inc.php,v 1.6 2005/10/28 17:34:43 chaot Exp $";
 // "file_verarbeitung";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -60,8 +60,8 @@
         }
 
 
-        // php major version muss 4 sein!
-	if ( substr(PHP_VERSION,0,1) == 4 ) {
+        // php major version muss mindestens 4 sein!
+        if ( substr(PHP_VERSION,0,1) >= 4 ) {
 
             $destination = $document_root.$destination."/";
             if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= "version: ".$_SERVER["SERVER_SOFTWARE"].$debugging["char"];
