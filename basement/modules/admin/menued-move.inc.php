@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: menued-move.inc.php,v 1.2 2004/11/06 20:45:12 chaot Exp $";
+// "$Id: menued-move.inc.php,v 1.3 2006/03/24 13:42:35 chaot Exp $";
 // "short description";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -67,7 +67,7 @@
         // page basics
 
 
-        $ausgaben["output"] .= sitemap($refid, "select", $environment["parameter"][1]);
+        $ausgaben["output"] .= sitemap(0, "select", $environment["parameter"][1]);
 
 
         // page basics
