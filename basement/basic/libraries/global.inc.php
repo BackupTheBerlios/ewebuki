@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: global.inc.php,v 1.12 2005/10/11 08:27:52 chaot Exp $";
+    $main_script_name = "$Id: global.inc.php,v 1.13 2006/07/13 09:27:15 chaot Exp $";
     $main_script_desc = "main include file";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -49,7 +49,7 @@
     $pathvars["webcss"]    = "/css"."/";                                # gilt nur fuer select seite
 
     // site config
-    require "../conf/site.cfg.php";
+    require dirname(dirname(dirname(__FILE__)))."/conf/site.cfg.php";
 
     // berlios fix
     if ( $pathvars["fileroot"] == "" ) {
