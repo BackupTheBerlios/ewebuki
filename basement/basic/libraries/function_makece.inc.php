@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_makece.inc.php,v 1.20 2004/11/06 14:55:55 chaot Exp $";
+// "$Id: function_makece.inc.php,v 1.21 2006/07/25 10:04:09 chaot Exp $";
 // "content editor erstellen";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -178,9 +178,10 @@
                         "quote"  => array( "1",  "",  "#(quote)"),
                         "pre"    => array( "1",  "",  "#(pre)"),
 
-                        // ueberschrrift, umbruch, trennlinie
+                        // ueberschrrift, absatz, umbruch, trennlinie
                         "h1"     => array( "1",  "1", "#(h1)"),
                         "h2"     => array( "1",  "1", "#(h2)"),
+                        "p"      => array( "1",  "1", "#(p)"),
                         "hr"     => array( "1",  "", "#(hr)"),
                         "sp"     => array( "1",  "",  "#(sp)"),
                         "br"     => array( "1",  "",  "#(br)"),
