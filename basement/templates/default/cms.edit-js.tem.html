@@ -1,4 +1,4 @@
-<!--$Id: cms.edit-js.tem.html,v 1.7 2005/05/07 19:56:37 chaot Exp $-->
+<!--$Id: cms.edit-js.tem.html,v 1.8 2006/07/25 10:09:42 chaot Exp $-->
 <!--##begin-->
 <NOSCRIPT>
 Sie haben Javascript deaktiviert!<BR>
@@ -96,6 +96,8 @@ function INSst(st,form,field){
         st='[H1]' + selText + '[\/H1]';
     else if (st=='h2')
         st='[H2]' + selText + '[\/H2]';
+    else if (st=='p')
+        st='[P]' + selText + '[\/P]';
     else if (st=='hr')
         st='[HR][\/HR]';
     else if (st=='sp')
