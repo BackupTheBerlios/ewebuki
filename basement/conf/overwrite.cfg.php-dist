@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: overwrite.cfg.php-dist,v 1.11 2005/02/17 13:48:39 chaot Exp $";
+// "$Id: overwrite.cfg.php-dist,v 1.12 2006/07/25 12:50:39 chaot Exp $";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
     eWeBuKi - a easy website building kit
@@ -60,6 +60,11 @@
   // bild fuer den bearbeiten link
   #$defaults["cms-tag"]["signal"] = "<img src=\"".$pathvars["images"]."/cms-tag-";
   #$defaults["cms-tag"]["/signal"] = ".png\" width=\"4\" height=\"4\" border=\"0\" alt=\"Bearbeiten\">";
+
+  // bild einfügen tag
+  #$defaults["cms-tag"]["grafik"] = "[IMGB=";
+  #$defaults["cms-tag"][",grafik"] = ";;0;b;";
+  #$defaults["cms-tag"]["/grafik"] = "[/IMGB]";
 
   // bilder fuer vor und zurueck
   #$defaults["select"]["none"] = "<img src=\"".$pathvars["images"]."pos.png\" height=\"9\" width=\"15\" border=\"0\" align=\"bottom\" alt=\"\" />" : NOP;
