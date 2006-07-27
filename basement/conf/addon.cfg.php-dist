@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: addon.cfg.php-dist,v 1.5 2006/07/26 08:11:55 chaot Exp $";
+// "$Id: addon.cfg.php-dist,v 1.6 2006/07/27 07:49:21 chaot Exp $";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
     eWeBuKi - a easy website building kit
@@ -93,6 +93,12 @@
     {
         include $pathvars["addonroot"]."admin/passed.cfg.php";
         include $pathvars["addonroot"]."admin/passed.inc.php";
+    }
+
+    // addon: view
+    if ( $environment["katid"] == "view" ) {
+        include $pathvars["addonroot"]."addon/view.inc.php";
+        include $pathvars["addonroot"]."addon/view.inc.php";
     }
 
 #    // addon: changed

@@ -1,6 +1,6 @@
 <?php $t_start = array_sum(explode(' ', microtime())); require "libraries/global.inc.php";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: main.php,v 1.20 2005/10/11 08:54:46 chaot Exp $";
+    $main_script_name = "$Id: main.php,v 1.21 2006/07/27 07:44:41 chaot Exp $";
     $main_script_desc = "haupt script";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -311,11 +311,6 @@
             session_register("kategorie");
             $HTTP_SESSION_VARS["kategorie"] = $environment["kategorie"];
         }
-    }
-
-    // view funktion
-    if ( $environment["katid"] == "view" ) {
-        include $pathvars["libraries"]."view.inc.php";
     }
 
     // steuerung der funktionen
