@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: addon.cfg.php-dist,v 1.7 2006/07/27 08:23:48 chaot Exp $";
+// "$Id: addon.cfg.php-dist,v 1.8 2006/07/27 09:16:35 chaot Exp $";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
     eWeBuKi - a easy website building kit
@@ -57,8 +57,8 @@
 
     // basic: view
     if ( $environment["katid"] == "view" ) {
-        include $pathvars["addonroot"]."addon/view.inc.php";
-        include $pathvars["addonroot"]."addon/view.inc.php";
+        include $pathvars["addonroot"]."basic/view.inc.php";
+        include $pathvars["addonroot"]."basic/view.inc.php";
     }
 
     // admin: leveled
