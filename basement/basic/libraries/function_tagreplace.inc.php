@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_tagreplace.inc.php,v 1.31 2006/07/31 10:08:04 chaot Exp $";
+// "$Id: function_tagreplace.inc.php,v 1.32 2006/08/02 11:58:17 chaot Exp $";
 // "tagreplace funktion";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -450,7 +450,6 @@
                                     $bilderstrecke = "";
                                 }
                                 if ( $imgwerte[3] != "" ) {
-
                                     #$imgnam = substr(strrchr($ausgaben["imgurl"],"/"),1);
                                     if ( strpos($imgurl,$pathvars["filebase"]["pic"]["root"]) === false ) {
                                         $opt = explode("/",$imgurl);
