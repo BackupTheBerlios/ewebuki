@@ -1,11 +1,11 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: magic.php,v 1.2 2005/05/24 23:36:01 chaot Exp $";
+// "$Id: magic.php,v 1.3 2006/08/15 19:03:13 chaot Exp $";
 // "image resize on demand";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
     eWeBuKi - a easy website building kit
-    Copyright (C)2001, 2002, 2003 Werner Ammon <wa@chaos.de>
+    Copyright (C)2001-2006 Werner Ammon ( wa<at>chaos.de )
 
     This script is a part of eWeBuKi
 
@@ -47,6 +47,12 @@
     $image["size"] = getimagesize($image["file"]);
 
     switch ( $image["size"][2] ) {
+        case 1: // gif
+            $img_src = @imagecreatefromgif($image["file"]);
+            $img_dst = resize( $img_src, $HTTP_GET_VARS["size"]);
+            header("Content-type: image/gif");
+            echo imagegif($img_dst);
+            break;
         case 2: // jpg
             $img_src = @imagecreatefromjpeg($image["file"]);
             $img_dst = resize( $img_src, $HTTP_GET_VARS["size"]);
