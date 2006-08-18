@@ -1,5 +1,5 @@
 # don't forget to load mod_rewrite in apache-config!
-# $Id: .htaccess-dist,v 1.6 2006/07/31 10:25:12 chaot Exp $
+# $Id: .htaccess-dist,v 1.7 2006/08/18 09:31:17 chaot Exp $
 <IfModule mod_rewrite.c>
   RewriteEngine On
   #RewriteBase /
@@ -8,12 +8,11 @@
   RewriteRule ^basic.* - [L] 			
   RewriteRule ^conf.* - [L] 			
   RewriteRule ^css.* - [L] 			
-  #RewriteRule ^file.* - [L] 			
   RewriteRule ^file/archiv/.* - [L]
   RewriteRule ^file/document/.* - [L]
   RewriteRule ^file/new/.* - [L]
   RewriteRule ^file/picture/.* - [L]
-  RewriteRule ^file.* ./basic/image.php [L] [T=application/x-httpd-php]
+  RewriteRule ^file.* ./basic/wrapper.php [L] [T=application/x-httpd-php]
   RewriteRule ^images.* - [L] 			
   RewriteRule ^modules.* - [L] 			
   RewriteRule ^templates.* - [L] 			
