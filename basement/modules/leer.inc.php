@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script["name"] = "$Id: leer.inc.php,v 1.4 2005/06/03 19:27:20 chaot Exp $";
+  $script["name"] = "$Id: leer.inc.php,v 1.5 2006/09/04 09:34:26 chaot Exp $";
   $Script["desc"] = "short description";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -45,7 +45,7 @@
 
     if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= "[ ** ".$script["name"]." ** ]".$debugging["char"];
 
-    if ( $rechte[$cfg["right"]] == "" || $rechte[$cfg["right"]] == -1 ) {
+    if ( $cfg["right"] == "" || $rechte[$cfg["right"]] == -1 ) {
 
         ////////////////////////////////////////////////////////////////////
         // achtung: bei globalen funktionen, variablen nicht zuruecksetzen!
