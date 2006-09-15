@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: fileed-delete.inc.php,v 1.1 2006/09/14 14:19:53 chaot Exp $";
+// "$Id: fileed-delete.inc.php,v 1.2 2006/09/15 10:55:12 chaot Exp $";
 // "leer - delete funktion";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -197,7 +197,7 @@
                             }
                         }
                     } else {
-                        $error = unlink($cfg["fileopt"][$type]["path"].$cfg["fileopt"][$type]["name"]."_".$id.".".$data["ffart"]);
+                        $return = unlink($cfg["fileopt"][$type]["path"].$cfg["fileopt"][$type]["name"]."_".$id.".".$data["ffart"]);
                         if ( $return != "1" ) {
                             $ausgaben["form_error"] = "error delete file";
                         }

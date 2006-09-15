@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: fileed-functions.inc.php,v 1.1 2006/09/14 14:19:53 chaot Exp $";
+// "$Id: fileed-functions.inc.php,v 1.2 2006/09/15 10:55:12 chaot Exp $";
 // "funktion loader";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -214,7 +214,7 @@
                 // speicher des quellbild freigeben
                 imagedestroy($img_src);
             } else {
-                rename($source, $cfg["fileopt"][$type]["path"].$cfg["fileopt"][$type]["name"]."_".$id.$extension);
+                rename($source, $cfg["fileopt"][$type]["path"].$cfg["fileopt"][$type]["name"]."_".$id.".".$extension);
             }
 
 
