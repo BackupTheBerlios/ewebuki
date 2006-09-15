@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: wrapper.php,v 1.2 2006/09/15 17:14:44 chaot Exp $";
+// "$Id: wrapper.php,v 1.3 2006/09/15 17:41:32 chaot Exp $";
 // "file wrapper";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -44,9 +44,9 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     # http://dev2/file/jpg/6/o/filename.extension
 
-    $fileroot = dirname(dirname(__FILE__))."/";
+    $pathvars["fileroot"] = dirname(dirname(__FILE__))."/";
 
-    require $fileroot."conf/file.cfg.php";
+    require $pathvars["fileroot"]."conf/file.cfg.php";
     $value = explode("/",$_SERVER["REQUEST_URI"]);
 
     if ( $value[6] == "d" ) {
