@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: wrapper.php,v 1.1 2006/08/18 09:29:01 chaot Exp $";
+// "$Id: wrapper.php,v 1.2 2006/09/15 17:14:44 chaot Exp $";
 // "file wrapper";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -117,7 +117,7 @@
 
 
     // filenamen zusammensetzen
-    $file = $fileroot.$pathvars["filebase"]["maindir"].$filepath.$value[3].".".$value[2];
+    $file = $pathvars["filebase"]["maindir"].$filepath.$value[3].".".$value[2];
 
     if ( $value[6] == "d" ) {
         echo $type."<br>";
