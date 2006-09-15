@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: fileed-add.inc.php,v 1.1 2006/09/14 14:19:53 chaot Exp $";
+// "$Id: fileed-add.inc.php,v 1.2 2006/09/15 08:58:57 chaot Exp $";
 // "fileed - add funktion";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -57,7 +57,7 @@
         #}
 
         // form options holen
-        $form_options = form_options(crc32($environment["ebene"]).".".$environment["kategorie"]);
+        $form_options = form_options(crc32($environment["ebene"]).".modify";
 
         // form elememte bauen
         $element = form_elements( $cfg["db"]["file"]["entries"], $form_values );
