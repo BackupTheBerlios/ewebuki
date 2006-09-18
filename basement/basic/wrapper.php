@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: wrapper.php,v 1.3 2006/09/15 17:41:32 chaot Exp $";
+// "$Id: wrapper.php,v 1.4 2006/09/18 11:55:05 chaot Exp $";
 // "file wrapper";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -46,8 +46,13 @@
 
     $pathvars["fileroot"] = dirname(dirname(__FILE__))."/";
 
+    require $pathvars["fileroot"]."conf/site.cfg.php";
     require $pathvars["fileroot"]."conf/file.cfg.php";
-    $value = explode("/",$_SERVER["REQUEST_URI"]);
+
+    // subdir support
+    $value = str_replace( $specialvars["subdir"]."/", "", $_SERVER["REQUEST_URI"] );
+
+    $value = explode("/",$value);
 
     if ( $value[6] == "d" ) {
         echo "<pre>";
