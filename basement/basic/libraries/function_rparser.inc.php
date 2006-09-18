@@ -1,11 +1,11 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script_name = "$Id: function_rparser.inc.php,v 1.25 2005/10/11 08:27:52 chaot Exp $";
+  $script_name = "$Id: function_rparser.inc.php,v 1.26 2006/09/18 11:59:00 chaot Exp $";
   $Script_desc = "recursiver template parser";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
     eWeBuKi - a easy website building kit
-    Copyright (C)2001, 2002, 2003 Werner Ammon <wa@chaos.de>
+    Copyright (C)2001-2006 Werner Ammon ( wa<at>chaos.de )
 
     This script is a part of eWeBuKi
 
@@ -248,7 +248,10 @@
       //////////////////////////////////////////////////////////////////////////////////////////////
       if ( $pathvars["subdir"] != "" ) {
         $line = str_replace("/images/","/".$pathvars["subdir"]."/images/",$line);
-        $line = str_replace("/file/","/".$pathvars["subdir"]."/file/",$line);
+        // pfade im content und im filesystem (magic.php) nicht aendern!
+        if ( strpos($line,"=".$pathvars["filebase"]["webdir"]) === false && strpos($line,$pathvars["filebase"]["maindir"]) === false ) {
+            $line = str_replace($pathvars["filebase"]["webdir"],"/".$pathvars["subdir"].$pathvars["filebase"]["webdir"],$line);
+        }
       }
 
       //////////////////////////////////////////////////////////////////////////////////////////////
