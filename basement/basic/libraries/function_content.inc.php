@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_content.inc.php,v 1.20 2005/06/03 12:34:32 chaot Exp $";
+// "$Id: function_content.inc.php,v 1.21 2006/09/20 17:29:08 chaot Exp $";
 // "content sprachabhaengig holen";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -104,11 +104,11 @@
                 if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= "Language: Uuuuups no default language \"".$specialvars["default_language"]."\" for #(".$label.") in template \"".$dbtname."\" found. Giving up!".$debugging["char"];
             }
 
-            global $HTTP_SESSION_VARS;
+            global $_SESSION;
             $database = $db->getDb();
-            if ( is_array($HTTP_SESSION_VARS["dbzugriff"]) ) {
+            if ( is_array($_SESSION["dbzugriff"]) ) {
                 // admin darf alles in seiner db !!
-                if ( in_array($database,$HTTP_SESSION_VARS["dbzugriff"]) && $rechte[$specialvars["security"]["overwrite"]] == -1 ) {
+                if ( in_array($database,$_SESSION["dbzugriff"]) && $rechte[$specialvars["security"]["overwrite"]] == -1 ) {
                     $dbzugriff = -1;
                     $katzugriff = -1;
                 // sperre fuer bestimmte templates

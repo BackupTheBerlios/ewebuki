@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: fileed-functions.inc.php,v 1.2 2006/09/15 10:55:12 chaot Exp $";
+// "$Id: fileed-functions.inc.php,v 1.3 2006/09/20 17:26:54 chaot Exp $";
 // "funktion loader";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -61,13 +61,13 @@
 
         function thumbnail() {
 
-            global $HTTP_SESSION_VARS, $cfg, $pathvars, $file;
+            global $_SESSION, $cfg, $pathvars, $file;
 
             $thumbnail = "";
             $dp = opendir($pathvars["filebase"]["maindir"].$pathvars["filebase"]["new"]);
             while ( $file = readdir($dp) ) {
                 $info  = explode( "_", $file, 2 );
-                if ( $info[0] == $HTTP_SESSION_VARS["uid"] ) {
+                if ( $info[0] == $_SESSION["uid"] ) {
                     $extension = strtolower(substr(strrchr($info[1],"."),1));
                     $type = $cfg["filetyp"][$extension];
                     if ( $type == "img" ) {

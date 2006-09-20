@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script["name"] = "$Id: function_right_check.inc.php,v 1.2 2005/05/27 09:44:44 chaot Exp $";
+  $script["name"] = "$Id: function_right_check.inc.php,v 1.3 2006/09/20 17:29:08 chaot Exp $";
   $Script["desc"] = "rechte in bereichen pruefen";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -48,16 +48,16 @@
     // $art = 1 - content
 
     function right_check($art, $ebene, $kategorie="",$database=DATABASE) {
-        global $HTTP_SESSION_VARS,$db;
-        
+        global $_SESSION,$db;
+
         $url = explode("/", $ebene."/".$kategorie);
         foreach ($url as $key => $value) {
             if ( $key > 0 ) $trenner = "/";
             $chkurl .= $trenner.$value;
             if ( $url[$key+1] == "" ) break;
             $stname = crc32($chkurl).".".$url[$key+1];
-            if ( is_array($HTTP_SESSION_VARS["katzugriff"]) ) {
-                if ( in_array($art.":".$database.":".$stname,$HTTP_SESSION_VARS["katzugriff"]) ) {
+            if ( is_array($_SESSION["katzugriff"]) ) {
+                if ( in_array($art.":".$database.":".$stname,$_SESSION["katzugriff"]) ) {
                     $berechtigt = $stname;
                     break;
                 }

@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: fileed-upload.inc.php,v 1.1 2006/09/14 14:19:53 chaot Exp $";
+// "$Id: fileed-upload.inc.php,v 1.2 2006/09/20 17:26:54 chaot Exp $";
 // "fileed - upload funktion";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -130,7 +130,7 @@
                 foreach ( $_FILES as $key => $value ) {
                     $file = file_verarbeitung( $pathvars["filebase"]["new"], $key, $cfg["filesize"], $cfg["filetyp"], $pathvars["filebase"]["maindir"] );
                     if ( $file["returncode"] == 0 ) {
-                        rename($pathvars["filebase"]["maindir"].$pathvars["filebase"]["new"].$file["name"],$pathvars["filebase"]["maindir"].$pathvars["filebase"]["new"].$HTTP_SESSION_VARS["uid"]."_".$file["name"]);
+                        rename($pathvars["filebase"]["maindir"].$pathvars["filebase"]["new"].$file["name"],$pathvars["filebase"]["maindir"].$pathvars["filebase"]["new"].$_SESSION["uid"]."_".$file["name"]);
                     } else {
                         $ausgaben["form_error"] .= "Ergebnis: ".$file["name"]." ";
                         $ausgaben["form_error"] .= file_error($file["returncode"])."<br>";
