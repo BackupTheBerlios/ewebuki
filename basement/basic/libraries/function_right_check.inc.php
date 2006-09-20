@@ -1,11 +1,11 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script["name"] = "$Id: function_right_check.inc.php,v 1.3 2006/09/20 17:29:08 chaot Exp $";
+  $script["name"] = "$Id: function_right_check.inc.php,v 1.4 2006/09/20 17:31:25 chaot Exp $";
   $Script["desc"] = "rechte in bereichen pruefen";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
     eWeBuKi - a easy website building kit
-    Copyright (C)2001, 2002, 2003 Werner Ammon <wa@chaos.de>
+    Copyright (C)2001-2006 Werner Ammon ( wa<at>chaos.de )
 
     This script is a part of eWeBuKi
 
