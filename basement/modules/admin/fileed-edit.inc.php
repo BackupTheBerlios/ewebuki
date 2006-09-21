@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: fileed-edit.inc.php,v 1.3 2006/09/20 17:26:54 chaot Exp $";
+// "$Id: fileed-edit.inc.php,v 1.4 2006/09/21 17:53:19 chaot Exp $";
 // "edit - edit funktion";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -49,8 +49,8 @@
         // ***
 
         if ( $environment["parameter"][1] == "" ) {
-            if ( count($_SESSION["images_memo"]) > 0 ) {
-                $environment["parameter"][1] = current($_SESSION["images_memo"]);
+            if ( count($_SESSION["file_memo"]) > 0 ) {
+                $environment["parameter"][1] = current($_SESSION["file_memo"]);
             } else {
                 header("Location: ".$cfg["basis"]."/list.html");
             }
@@ -208,7 +208,7 @@
                 if ( !$result ) $ausgaben["form_error"] .= $db -> error("#(error_result)<br />");
                 if ( $header == "" ) $header = $cfg["basis"]."/edit.html";
 
-                unset ($_SESSION["images_memo"][$environment["parameter"][1]]);
+                unset ($_SESSION["file_memo"][$environment["parameter"][1]]);
             }
 
             // wenn es keine fehlermeldungen gab, die uri $header laden
