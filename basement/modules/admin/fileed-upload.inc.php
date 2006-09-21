@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: fileed-upload.inc.php,v 1.2 2006/09/20 17:26:54 chaot Exp $";
+// "$Id: fileed-upload.inc.php,v 1.3 2006/09/21 17:45:04 chaot Exp $";
 // "fileed - upload funktion";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -139,6 +139,7 @@
 
                 if ( $ausgaben["form_error"] == "" ) {
                     header("Location: ".$cfg["basis"]."/add,".$environment["parameter"][1].".html");
+                    exit(); ### laut guenther wird es gebraucht, warum?
                 } else {
                     $ausgaben["form_error"] .= "<br><br><a href=\"".$cfg["basis"]."/add,".$environment["parameter"][1].".html\">Trotzdem weiter</a>";
                     #$mapping["main"] = "default1";
