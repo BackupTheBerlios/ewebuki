@@ -1,11 +1,11 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: leer-delete.inc.php,v 1.6 2006/09/04 09:34:26 chaot Exp $";
+// "$Id: leer-delete.inc.php,v 1.7 2006/09/22 06:16:23 chaot Exp $";
 // "leer - delete funktion";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
     eWeBuKi - a easy website building kit
-    Copyright (C)2001, 2002, 2003 Werner Ammon <wa@chaos.de>
+    Copyright (C)2001-2006 Werner Ammon ( wa<at>chaos.de )
 
     This script is a part of eWeBuKi
 
@@ -176,8 +176,6 @@
                     $result  = $db -> query($sql);
                     if ( !$result ) $ausgaben["form_error"] = $db -> error("#(error_result1)<br />");
                 }
-                // +++
-                // ohne fehler menupunkte loeschen
 
                 // wohin schicken
                 if ( $ausgaben["form_error"] == "" ) {

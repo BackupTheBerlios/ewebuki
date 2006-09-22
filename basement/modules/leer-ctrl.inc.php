@@ -1,11 +1,11 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script["name"] = "$Id: leer-ctrl.inc.php,v 1.2 2005/05/27 18:21:57 chaot Exp $";
+  $script["name"] = "$Id: leer-ctrl.inc.php,v 1.3 2006/09/22 06:16:23 chaot Exp $";
   $Script["desc"] = "leer - kontroll funktion";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
     eWeBuKi - a easy website building kit
-    Copyright (C)2001, 2002, 2003 Werner Ammon <wa@chaos.de>
+    Copyright (C)2001-2006 Werner Ammon ( wa<at>chaos.de )
 
     This script is a part of eWeBuKi
 

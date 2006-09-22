@@ -1,11 +1,11 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: leer-list.inc.php,v 1.5 2006/09/04 09:34:26 chaot Exp $";
+// "$Id: leer-list.inc.php,v 1.6 2006/09/22 06:16:23 chaot Exp $";
 // "leer - list funktion";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
     eWeBuKi - a easy website building kit
-    Copyright (C)2001, 2002, 2003 Werner Ammon <wa@chaos.de>
+    Copyright (C)2001-2006 Werner Ammon ( wa<at>chaos.de )
 
     This script is a part of eWeBuKi
 
