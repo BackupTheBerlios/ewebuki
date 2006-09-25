@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_content.inc.php,v 1.22 2006/09/20 17:31:25 chaot Exp $";
+// "$Id: function_content.inc.php,v 1.23 2006/09/25 16:32:20 chaot Exp $";
 // "content sprachabhaengig holen";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -104,7 +104,6 @@
                 if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= "Language: Uuuuups no default language \"".$specialvars["default_language"]."\" for #(".$label.") in template \"".$dbtname."\" found. Giving up!".$debugging["char"];
             }
 
-            global $_SESSION;
             $database = $db->getDb();
             if ( is_array($_SESSION["dbzugriff"]) ) {
                 // admin darf alles in seiner db !!

@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script["name"] = "$Id: function_right_check.inc.php,v 1.4 2006/09/20 17:31:25 chaot Exp $";
+  $script["name"] = "$Id: function_right_check.inc.php,v 1.5 2006/09/25 16:32:20 chaot Exp $";
   $Script["desc"] = "rechte in bereichen pruefen";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -48,7 +48,7 @@
     // $art = 1 - content
 
     function right_check($art, $ebene, $kategorie="",$database=DATABASE) {
-        global $_SESSION,$db;
+        global $db;
 
         $url = explode("/", $ebene."/".$kategorie);
         foreach ($url as $key => $value) {

@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_makece.inc.php,v 1.30 2006/09/21 17:33:24 chaot Exp $";
+// "$Id: function_makece.inc.php,v 1.31 2006/09/25 16:32:20 chaot Exp $";
 // "content editor erstellen";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -44,15 +44,15 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     function makece($ce_formname, $ce_name, $ce_inhalt) {
-        global $db, $pathvars, $ausgaben, $extension, $specialvars, $defaults;
+        global $debugging, $db, $pathvars, $ausgaben, $extension, $specialvars, $defaults;
         $ausgaben["ce_name"] = $ce_name;
 
         // vogelwilde regex die alte & neue file links findet
         // und viel arbeit erspart
         preg_match_all("/[_\/]([0-9]+)[.\/]/",$ce_inhalt,$found);
+        $debugging["ausgabe"] .= "<pre>".print_r($found,True)."</pre>";
 
         // file memo auslesen und zuruecksetzen
-        global $_SESSION;
         if ( is_array($_SESSION["file_memo"]) ) {
             $array = array_merge($_SESSION["file_memo"],$found[1]);
             unset($_SESSION["file_memo"]);

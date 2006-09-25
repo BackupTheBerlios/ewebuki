@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $script_name = "$Id: auth.inc.php,v 1.16 2006/09/20 17:29:08 chaot Exp $";
+    $script_name = "$Id: auth.inc.php,v 1.17 2006/09/25 16:32:20 chaot Exp $";
     $Script_desc = "authentifikation modul (mysql encrypt/ php crypt)";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -125,6 +125,7 @@
             } else {
                 $destination = "/auth".$destination_src;
             }
+            session_write_close();
             header("Location: ".$destination);
             exit; // Sicherstellen, dass nicht trotz Umleitung der nachfolgende Code ausgeführt wird.
         } else {
