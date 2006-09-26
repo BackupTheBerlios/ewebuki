@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: fileed-list.inc.php,v 1.17 2006/09/26 10:24:53 chaot Exp $";
+// "$Id: fileed-list.inc.php,v 1.18 2006/09/26 10:42:41 chaot Exp $";
 // "fileed - list funktion";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -128,7 +128,6 @@
                 }
             }
             if ( $part["search"] != "" ) $part["search"] = "(".$part["search"].")";
-
         } else {
             $ausgaben["search"] = "";
         }
@@ -161,9 +160,9 @@
         }
 
         // where build
-        if ( count($where) >= 2 ) $binder = " AND ";
+        if ( count($part) >= 2 ) $binder = " AND ";
         foreach ( $part as $value ) {
-            if ( $condition == "" ) {
+            if ( $where == "" ) {
                 $where = " WHERE ".$value;
             } else {
                 $where .= $binder.$value;
@@ -195,6 +194,7 @@
         $ausgaben["anzahl"] = $inhalt_selector[2];
 
         $result = $db -> query($sql); $i = 0;
+        if ( $debugging["sql_enable"] ) $debugging["ausgabe"] .= "sql: ".$sql.$debugging["char"];
 
         if ( $db->num_rows($result) == 0 ) {
             #$ausgaben["result"] .= " keine Einträge gefunden.";
