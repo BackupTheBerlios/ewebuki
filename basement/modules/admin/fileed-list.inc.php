@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: fileed-list.inc.php,v 1.19 2006/09/27 07:15:59 chaot Exp $";
+// "$Id: fileed-list.inc.php,v 1.20 2006/09/27 07:20:07 chaot Exp $";
 // "fileed - list funktion";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -66,8 +66,8 @@
 
         // auswahllisten erstellen
         $set = array(); $data = array();
-        $_SESSION["fileed_filter0"] = 0;
-        $_SESSION["fileed_filter1"] = 0;
+        $_SESSION["fileed_filter0"] = $_SESSION["fileed_filter0"] + 0;
+        $_SESSION["fileed_filter1"] = $_SESSION["fileed_filter1"] + 0;
         foreach( $cfg["filter"] as $set => $data ) {
             if ( $HTTP_GET_VARS["filter".$set] != "" ) {
                 $_SESSION["fileed_filter".$set] = $HTTP_GET_VARS["filter".$set];
