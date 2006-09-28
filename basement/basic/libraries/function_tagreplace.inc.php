@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: function_tagreplace.inc.php,v 1.33 2006/08/14 15:36:15 chaot Exp $";
+// "$Id: function_tagreplace.inc.php,v 1.34 2006/09/28 10:33:03 chaot Exp $";
 // "tagreplace funktion";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -140,7 +140,24 @@
                         $replace = str_replace($opentag.$tagwert.$closetag,"<pre>".$tagwert."</pre>",$replace);
                         break;
                     case "[/P]":
-                        $replace = str_replace($opentag.$tagwert.$closetag,"<p>".$tagwert."</p>",$replace);
+                        if ( $sign == "]" ) {
+                            $ausgabewert = "<p>".$tagwert."</p>";
+                            $replace = str_replace($opentag.$tagwert.$closetag,$ausgabewert,$replace);
+                        } else {
+                            $tagwerte = explode("]",$tagwert,2);
+                            $pwerte = explode(";",$tagwerte[0]);
+                            if ( $pwerte[1] == "id" ) {
+                                $art = "id";
+                            } else {
+                                $art = "class";
+                            }
+                            if ( $pwerte[0] != "" ) {
+                                $attrib = " ".$art."=\"".$pwerte[0]."\"";
+                            } else {
+                                $attrib = "";
+                            }
+                            $replace = str_replace($opentag.$tagwert.$closetag,"<p".$attrib.">".$tagwerte[1]."</p>",$replace);
+                        }
                         break;
                     case "[/BR]":
                         if ( $sign == "]" ) {
@@ -496,17 +513,22 @@
                         $replace = str_replace($opentag.$tagwert.$closetag,$ausgabewert,$replace);
                         break;
                     case "[/DIV]":
-                        $tagwerte = explode("]",$tagwert,2);
-                        $divwerte = explode(";",$tagwerte[0]);
-                        if ( $divwerte[1] == "id" ) {
-                            $art = "id";
+                        if ( $sign == "]" ) {
+                            $ausgabewert = "<div>".$tagwert."</div>";
+                            $replace = str_replace($opentag.$tagwert.$closetag,$ausgabewert,$replace);
                         } else {
-                            $art = "class";
+                            $tagwerte = explode("]",$tagwert,2);
+                            $divwerte = explode(";",$tagwerte[0]);
+                            if ( $divwerte[1] == "id" ) {
+                                $art = "id";
+                            } else {
+                                $art = "class";
+                            }
+                            if ( $divwerte[0] != "" ) {
+                                $attrib = " ".$art."=\"".$divwerte[0]."\"";
+                            }
+                            $replace = str_replace($opentag.$tagwert.$closetag,"<div".$attrib.">".$tagwerte[1]."</div>",$replace);
                         }
-                        if ( $divwerte[0] != "" ) {
-                            $uattrib = " ".$art."=\"".$divwerte[0]."\"";
-                        }
-                        $replace = str_replace($opentag.$tagwert.$closetag,"<div".$uattrib.">".$tagwerte[1]."</div>",$replace);
                         break;
                     case "[/TAB]":
                         if ( $sign == "]" ) {
