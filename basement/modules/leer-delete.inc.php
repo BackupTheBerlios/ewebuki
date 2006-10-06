@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: leer-delete.inc.php,v 1.7 2006/09/22 06:16:23 chaot Exp $";
+// "$Id: leer-delete.inc.php,v 1.8 2006/10/06 14:38:44 chaot Exp $";
 // "leer - delete funktion";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -96,9 +96,9 @@
             $result = $db -> query($sql);
             while ( $data2 = $db -> fetch_array($result,$nop) ) {
                 if ( $ids != "" ) $ids .= ",";
-                $ids .= $array["id"];
-                $ausgaben["field3"] .= $array["field1"]." ";
-                $ausgaben["field3"] .= $array["field2"]."<br />";
+                $ids .= $data2["id"];
+                $ausgaben["field3"] .= $data2["field1"]." ";
+                $ausgaben["field3"] .= $data2["field2"]."<br />";
             }
             $ausgaben["form_id2"] = $ids;
             */
