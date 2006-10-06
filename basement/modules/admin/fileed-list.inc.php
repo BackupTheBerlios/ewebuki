@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: fileed-list.inc.php,v 1.20 2006/09/27 07:20:07 chaot Exp $";
+// "$Id: fileed-list.inc.php,v 1.21 2006/10/06 09:18:07 chaot Exp $";
 // "fileed - list funktion";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -113,6 +113,7 @@
 
         // suche verarbeiten
         if ( isset($HTTP_GET_VARS["search"]) ) {
+            $_SESSION["fileed_position"] = 0;
             $_SESSION["fileed_search"] = $HTTP_GET_VARS["search"];
         } elseif ( isset($HTTP_GET_VARS["search"]) && $HTTP_GET_VARS["search"] == "" ) {
             unset($_SESSION["fileed_search"]);
