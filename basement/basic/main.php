@@ -1,6 +1,6 @@
 <?php $t_start = array_sum(explode(' ', microtime())); require "libraries/global.inc.php";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: main.php,v 1.24 2006/10/19 08:50:34 chaot Exp $";
+    $main_script_name = "$Id: main.php,v 1.25 2006/10/19 08:58:33 chaot Exp $";
     $main_script_desc = "haupt script";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -231,13 +231,12 @@
     if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= "strg (alt) subkatid: ".$environment["subkatid"].$debugging["char"];
 
     // die drei design abhaengigen variablen werden angepasst
-    $pathvars["menuroot"]  = "http://".$_SERVER["HTTP_HOST"].$pathvars["virtual"];
+    $pathvars["menuroot"]  = "http://".$_SERVER["HTTP_HOST"].$pathvars["subdir"].$pathvars["virtual"];
     $pathvars["images"]    = "/images/".$environment["design"]."/";
     $pathvars["templates"] = $pathvars["fileroot"]."templates/".$environment["design"]."/";
 
     // subdir support
     if ( $pathvars["subdir"] != "" ) {
-        $pathvars["menuroot"] = $pathvars["subdir"].$pathvars["menuroot"];
         $pathvars["virtual"] = $pathvars["subdir"].$pathvars["virtual"];
         $pathvars["requested"] = $pathvars["subdir"].$pathvars["requested"];
 
