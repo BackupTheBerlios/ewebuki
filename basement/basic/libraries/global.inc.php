@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: global.inc.php,v 1.13 2006/07/13 09:27:15 chaot Exp $";
+    $main_script_name = "$Id: global.inc.php,v 1.14 2006/10/19 08:41:17 chaot Exp $";
     $main_script_desc = "main include file";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -58,8 +58,9 @@
 
     // subdir support
     if ( $specialvars["subdir"] != "" ) {
-        $pathvars["subdir"] = trim($specialvars["subdir"],"/");
-        $pathvars["fileroot"] = $pathvars["fileroot"].$pathvars["subdir"]."/";
+        $specialvars["subdir"] = trim($specialvars["subdir"],"/");
+        $pathvars["subdir"] = "/".$specialvars["subdir"];
+        $pathvars["fileroot"] = $pathvars["fileroot"].$specialvars["subdir"]."/";
     }
 
     $pathvars["basicroot"]  = $pathvars["fileroot"]."basic/";

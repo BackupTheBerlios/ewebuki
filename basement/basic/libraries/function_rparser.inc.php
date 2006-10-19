@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script_name = "$Id: function_rparser.inc.php,v 1.26 2006/09/18 11:59:00 chaot Exp $";
+  $script_name = "$Id: function_rparser.inc.php,v 1.27 2006/10/19 08:41:17 chaot Exp $";
   $Script_desc = "recursiver template parser";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -91,7 +91,7 @@
 
               // image path korrektur
               if ( strpos($line,"../../images/") !== false ) {
-                $line=str_replace("../../images/","/images/",$line);
+                $line=str_replace("../../images/",$pathvars["subdir"]."/images/",$line);
               }
 
               // style path korrektur + dynamic style
@@ -103,7 +103,7 @@
                 } else {
                     $stylename = $environment["design"];
                 }
-                $line=str_replace("../../css/".$environment["design"].".css",$pathvars["webcss"].$stylename.".css",$line);
+                $line=str_replace("../../css/".$environment["design"].".css",$pathvars["subdir"].$pathvars["webcss"].$stylename.".css",$line);
               }
 
               // dynamic bg
@@ -244,13 +244,13 @@
               }
 
       //////////////////////////////////////////////////////////////////////////////////////////////
-      // subdir support
+      // subdir support restliche images
       //////////////////////////////////////////////////////////////////////////////////////////////
       if ( $pathvars["subdir"] != "" ) {
-        $line = str_replace("/images/","/".$pathvars["subdir"]."/images/",$line);
+        $line = str_replace("/images/",$pathvars["subdir"]."/images/",$line);
         // pfade im content und im filesystem (magic.php) nicht aendern!
         if ( strpos($line,"=".$pathvars["filebase"]["webdir"]) === false && strpos($line,$pathvars["filebase"]["maindir"]) === false ) {
-            $line = str_replace($pathvars["filebase"]["webdir"],"/".$pathvars["subdir"].$pathvars["filebase"]["webdir"],$line);
+            $line = str_replace($pathvars["filebase"]["webdir"],$pathvars["subdir"].$pathvars["filebase"]["webdir"],$line);
         }
       }
 

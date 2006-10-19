@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $script_name = "$Id: auth.inc.php,v 1.17 2006/09/25 16:32:20 chaot Exp $";
+    $script_name = "$Id: auth.inc.php,v 1.18 2006/10/19 08:41:17 chaot Exp $";
     $Script_desc = "authentifikation modul (mysql encrypt/ php crypt)";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -47,7 +47,7 @@
 
     // ACHTUNG: auth.cfg.php im Config Directory wird inkludiert!
 
-    // login link erstellen
+    // link zur hidden login kategorie erstellen
     $pathvars["pretorian"] = $pathvars["menuroot"]."/".$cfg["hidden"]["kategorie"].".html";
 
     // referer im form mit hidden element mitschleppen
@@ -116,15 +116,17 @@
             }
 
             if ( $cfg["hidden"]["set"] == True ) {
-                $destination_src = $ausgaben["form_referer"];
+                $destination_src = $pathvars["subdir"].$ausgaben["form_referer"];
             } else {
                 $destination_src = $pathvars["requested"];
             }
-            if ( $pathvars["virtual"] != "" ) {
-                $destination = str_replace($pathvars["virtual"],$pathvars["virtual"]."/auth",$destination_src);
-            } else {
+
+            if ( $pathvars["virtual"] == "" ) {
                 $destination = "/auth".$destination_src;
+            } else {
+                $destination = str_replace($pathvars["virtual"],$pathvars["virtual"]."/auth",$destination_src);
             }
+
             session_write_close();
             header("Location: ".$destination);
             exit; // Sicherstellen, dass nicht trotz Umleitung der nachfolgende Code ausgeführt wird.
@@ -158,7 +160,7 @@
 
         // bei ungueltiger session auth aus der url nehmen
         if ( $_SESSION["auth"] != -1 ) {
-            header("Location: ".$ausgaben["auth_url"]);
+            header("Location: ". str_replace("/auth","",$_SERVER["REQUEST_URI"]));
         }
 
         if ( $debugging["html_enable"] ) $debugging["ausgabe"] .= "uid = ".$_SESSION["uid"].$debugging["char"];

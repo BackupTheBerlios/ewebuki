@@ -1,6 +1,6 @@
 <?php $t_start = array_sum(explode(' ', microtime())); require "libraries/global.inc.php";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: main.php,v 1.22 2006/09/20 17:29:08 chaot Exp $";
+    $main_script_name = "$Id: main.php,v 1.23 2006/10/19 08:41:17 chaot Exp $";
     $main_script_desc = "haupt script";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -57,7 +57,7 @@
 
     // subdir support
     if ( $pathvars["subdir"] != "" ) {
-        $pathvars["requested"] = str_replace($pathvars["subdir"]."/","",$pathvars["requested"]);
+        $pathvars["requested"] = str_replace($pathvars["subdir"],"",$pathvars["requested"]);
     }
 
     // url ohne .html wird auf index.html gesetzt
@@ -237,9 +237,11 @@
 
     // subdir support
     if ( $pathvars["subdir"] != "" ) {
-        $pathvars["virtual"] = "/".$pathvars["subdir"].$pathvars["virtual"];
-        $pathvars["requested"] = "/".$pathvars["subdir"].$pathvars["requested"];
-        $ausgaben["auth_url"] = "/".$pathvars["subdir"].$ausgaben["auth_url"];
+        $pathvars["images"] = $pathvars["subdir"].$pathvars["images"];
+        $pathvars["virtual"] = $pathvars["subdir"].$pathvars["virtual"];
+        $pathvars["requested"] = $pathvars["subdir"].$pathvars["requested"];
+
+        $ausgaben["auth_url"] = $pathvars["subdir"].$ausgaben["auth_url"];
     }
 
     // grundmapping main output
