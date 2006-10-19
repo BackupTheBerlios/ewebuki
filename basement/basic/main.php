@@ -1,6 +1,6 @@
 <?php $t_start = array_sum(explode(' ', microtime())); require "libraries/global.inc.php";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $main_script_name = "$Id: main.php,v 1.23 2006/10/19 08:41:17 chaot Exp $";
+    $main_script_name = "$Id: main.php,v 1.24 2006/10/19 08:50:34 chaot Exp $";
     $main_script_desc = "haupt script";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -237,7 +237,7 @@
 
     // subdir support
     if ( $pathvars["subdir"] != "" ) {
-        $pathvars["images"] = $pathvars["subdir"].$pathvars["images"];
+        $pathvars["menuroot"] = $pathvars["subdir"].$pathvars["menuroot"];
         $pathvars["virtual"] = $pathvars["subdir"].$pathvars["virtual"];
         $pathvars["requested"] = $pathvars["subdir"].$pathvars["requested"];
 
