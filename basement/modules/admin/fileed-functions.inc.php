@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: fileed-functions.inc.php,v 1.3 2006/09/20 17:26:54 chaot Exp $";
+// "$Id: fileed-functions.inc.php,v 1.4 2006/10/20 18:48:41 chaot Exp $";
 // "funktion loader";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -159,6 +159,9 @@
                 case "jpg":
                     imagejpeg($img_dst,$img_path."/".$img_name."_".$img_id.".jpg");
                     break;
+                case "jpeg":
+                    imagejpeg($img_dst,$img_path."/".$img_name."_".$img_id.".jpeg");
+                    break;
                 case "png":
                     imagepng($img_dst,$img_path."/".$img_name."_".$img_id.".png");
                     break;
@@ -187,7 +190,7 @@
                     case "gif":
                         $img_src = @imagecreatefromgif($source);
                         break;
-                    case "jpg":
+                    case "jpg": case "jpeg":
                         $img_src = @imagecreatefromjpeg($source);
                         break;
                     case "png":
