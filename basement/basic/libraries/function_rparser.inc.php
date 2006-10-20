@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script_name = "$Id: function_rparser.inc.php,v 1.27 2006/10/19 08:41:17 chaot Exp $";
+  $script_name = "$Id: function_rparser.inc.php,v 1.28 2006/10/20 08:28:52 chaot Exp $";
   $Script_desc = "recursiver template parser";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -95,7 +95,7 @@
               }
 
               // style path korrektur + dynamic style
-              if ( strpos($line,"../../css/".$environment["design"].".css") !== false ) {
+              if ( strpos($line,"../../css/") !== false ) {
                 if ( substr($specialvars["dynamiccss"],0,1) == "_" ) {
                     $stylename = $environment["design"].$specialvars["dynamiccss"];
                 } elseif ( $specialvars["dynamiccss"] != "" ) {
@@ -103,7 +103,7 @@
                 } else {
                     $stylename = $environment["design"];
                 }
-                $line=str_replace("../../css/".$environment["design"].".css",$pathvars["subdir"].$pathvars["webcss"].$stylename.".css",$line);
+                $line=str_replace("../../css/",$pathvars["subdir"].$pathvars["webcss"],$line);
               }
 
               // dynamic bg
