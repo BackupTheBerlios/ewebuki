@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// "$Id: wrapper.php,v 1.5 2006/09/18 12:47:02 chaot Exp $";
+// "$Id: wrapper.php,v 1.6 2006/10/20 11:39:01 chaot Exp $";
 // "file wrapper";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -50,6 +50,7 @@
     require $pathvars["fileroot"]."conf/file.cfg.php";
 
     // subdir support
+    $specialvars["subdir"] = trim(dirname(dirname($_SERVER["SCRIPT_NAME"])),"/");
     if ( $specialvars["subdir"] != "" ) {
         $value = str_replace( $specialvars["subdir"]."/", "", $_SERVER["REQUEST_URI"] );
     } else {
