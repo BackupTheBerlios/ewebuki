@@ -1,6 +1,6 @@
 <?php
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  $script_name = "$Id: menu.inc.php,v 1.10 2006/07/13 19:25:08 chaot Exp $";
+  $script_name = "$Id: menu.inc.php,v 1.11 2006/11/07 12:34:55 chaot Exp $";
   $Script_desc = "menu generieren - 3 stufen ";
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -246,7 +246,8 @@
             //
             // menupunkte level 3
             //
-            if ( strstr($environment["ebene"],"/".$level1array["entry"]) || strstr($environment["kategorie"],$level1array["entry"]) ) {
+            #if ( strstr($environment["ebene"],"/".$level1array["entry"]) || strstr($environment["kategorie"],$level1array["entry"]) ) {
+            if ( strpos($environment["ebene"]."/".$environment["kategorie"],$level1array["entry"]."/".$level2array["entry"]) !== false ) {
                 if ( $cfg["menu"]["level3"]["extend"] == "-1" ) $extenddesc = $cfg["menu"]["db"]["entries"]."_lang.extend,";
                 $sql = "SELECT  ".$cfg["menu"]["db"]["entries"].".mid,
                                 ".$cfg["menu"]["db"]["entries"].".refid,
